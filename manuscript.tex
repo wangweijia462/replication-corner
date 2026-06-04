@@ -12,7 +12,7 @@
 \usepackage{threeparttable}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage[numbers,sort&compress]{natbib}
+\usepackage[authoryear,sort]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
 \usepackage{times}
@@ -154,7 +154,7 @@ reviewers, and editors allocate attention partly on the basis of
 normalized prestige categories \citep{DiMaggio1983}.
 Consistent with this logic, empirical research documents robust
 citation and readership premiums for articles from high-prestige
-institutions, controlling for article content \citep{Wang2013,Lariviere2010}.
+institutions, controlling for article content \citep{Wang2013}.
 \begin{description}
   \item[H1] \textit{(Prestige--Diffusion Association):}
   Articles affiliated with higher-prestige institutions will receive
@@ -173,6 +173,11 @@ formulaic transitions, and templated summary phrases
 \citet{Liang2024} document the increasing prevalence and characteristic
 patterns of LLM-assisted academic writing, and \citet{Biber2016}
 characterises the broader structural features of academic English style.
+Although \citeauthor{Biber2016} analyze English-language corpora, the
+structural properties they document---formulaic section organization,
+high nominal density, and templated transitional phrases---manifest
+analogously in Chinese LLM-assisted academic abstracts, providing
+cross-linguistic grounding for our marker taxonomy.
 Readers may interpret this style as signaling methodological
 thoroughness and genre conformity, independent of substantive quality
 differences.
@@ -402,8 +407,8 @@ High-prestige articles exhibit a marginally lower mean AI-style score
 (0.250) than low-prestige articles (0.268); the bivariate correlation
 between \textit{Prestige\_High} and \textit{ai\_z} is $r\,=\,{-}.08$
 ($p\,=\,.082$), confirming the two focal predictors are not collinear.
-At the time of data collection, approximately 83\% of articles had
-received zero citations, reflecting the short publication window
+At the time of data collection, approximately 83\% of articles ($n = 397$
+of 480) had received zero citations, reflecting the short publication window
 (most articles published in 2024--2026) and the relatively modest
 citation velocity on CNKI for newly-published work.
 The citation-based results should therefore be treated as exploratory.
@@ -439,7 +444,10 @@ is associated with approximately 0.27 additional log-download units.
 The AI-style--citation association is
 $\hat{\beta} = 0.176$ (SE\,=\,0.058, $p\,=\,.002$; Column~2).
 In the continuous prestige-score model (Column~3),
-$\hat{\beta}_{\text{AI}} = 0.266$ (SE\,=\,0.053, $p<.001$).
+$\hat{\beta}_{\text{AI}} = 0.266$ (SE\,=\,0.053, $p<.001$;
+coinciding with the Column~1 point estimate---the SE difference reflects
+the adjustment in covariate structure under the continuous-prestige
+specification).
 These effects are robust to the choice of prestige operationalization
 and outcome variable.
 
@@ -480,16 +488,17 @@ prestige alone---drives most of the explained variance.
 Table~\ref{tab:robustness} reports six robustness specifications.
 Using a binary median-split AI variable (Specification~2) leaves
 the interaction non-significant for downloads
-($\hat{\beta}_3 = 0.010$, $p\,=\,.914$) and citations
-($\hat{\beta}_3 = -0.053$, $p\,=\,.410$).
+($\hat{\beta}_3 = 0.010$) and citations ($\hat{\beta}_3 = -0.053$).
 Excluding 2026 articles (Specification~3) and trimming the top 5\%
 of downloads (Specification~4) yield interaction estimates within
 sampling error of the baseline.
-The citations model with binary prestige (Specification~5) and
-the download model with continuous prestige (Specification~6)
-corroborate the baseline.
+Specifications~5 and~6 replicate columns already reported in
+Table~\ref{tab:main} (Columns~2 and~3, respectively) and are included
+for completeness rather than as independent new checks.
 Main effects of prestige and AI-style remain positive and significant
-in all specifications.
+in all specifications; all six Prestige\,$\times$\,AI interaction
+terms are non-significant (additional $p$-values and confidence
+intervals are available in Web Appendix Table~B2).
 
 % ---- 5. Discussion ----------------------------------------------------------
 \section{Discussion}
@@ -528,6 +537,11 @@ proxy that attenuates the estimated interaction toward zero, and
 insufficient statistical power given the sample size of 480;
 the present data do not allow us to empirically distinguish between
 these accounts.
+The width of the 95\,\% confidence intervals (spanning approximately
+$\pm$0.2 log-units for the binary-prestige interactions) indicates
+that the design would be unable to reliably detect effects smaller
+than roughly half a standard deviation, motivating larger-sample
+replications.
 
 The structure of China's academic system amplifies this dynamic.
 Prestige classifications (C9, 985, 211) are embedded in government
@@ -695,11 +709,6 @@ Van Noorden, R. (2023).
 Wang, D., Song, C., \& Barabási, A.-L. (2013).
 \newblock Quantifying long-term scientific impact.
 \newblock \textit{Science}, 342(6154), 127--132.
-
-\bibitem[Wuchty et al.(2007)]{Wuchty2007}
-Wuchty, S., Jones, B.~F., \& Uzzi, B. (2007).
-\newblock The increasing dominance of teams in production of knowledge.
-\newblock \textit{Science}, 316(5827), 1036--1039.
 
 \end{thebibliography}
 
@@ -897,6 +906,8 @@ development sample) and ChatGPT--human convergent reliability
 \textbf{A3. Institution prestige coding.}
 Full rubric and list of C9, 985, and 211/DFC institutions;
 prestige-score distribution by year; inter-rater reliability ($\kappa$).
+Sensitivity analysis using first-author institution prestige coding;
+focal regression coefficients compared with maximum-tier baseline.
 
 \textbf{A4. Variable dictionary.}
 Definitions, measurement units, and additional descriptive statistics
