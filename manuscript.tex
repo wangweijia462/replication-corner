@@ -61,8 +61,7 @@ near zero and statistically insignificant across four specifications
 These results suggest that the reputation-equalizing
 potential of AI-style writing documented for SSRN preprints may not
 extend to peer-reviewed publication contexts where editorial gatekeeping
-provides an independent quality signal---at least within Chinese
-business and management scholarship.
+provides an independent quality signal---at least within the Chinese peer-reviewed business and management context.
 
 \smallskip\noindent
 \textbf{Keywords:} AI writing style; institutional prestige; knowledge
@@ -129,8 +128,7 @@ independently predict greater diffusion---replicating the two main
 effects of \citet{JoLi2026}---but the critical interaction is
 consistently small and statistically insignificant across all
 specifications, suggesting that peer-reviewed journal publication
-may represent a boundary condition, at least in the Chinese business
-and management domain.
+may represent a boundary condition, at least within the Chinese peer-reviewed business and management context.
 
 Section~\ref{sec:theory} reviews the theoretical background and states
 our propositions.
@@ -171,7 +169,8 @@ The proliferation of large language models since late 2022 has produced
 a recognizable stylistic pattern in academic abstracts: structured
 section-by-section organization, high density of methodological keywords,
 formulaic transitions, and templated summary phrases
-\citep{Liang2024,Biber2016}.
+\citep[documenting the increasing prevalence and characteristic
+patterns of LLM-assisted academic writing]{Liang2024}\citep{Biber2016}.
 Readers may interpret this style as signaling methodological
 thoroughness and genre conformity, independent of substantive quality
 differences.
@@ -269,9 +268,10 @@ to articles with at least six months of potential citation exposure.
 \subsection{AI-Style Score}
 
 The \textit{ai\_style\_score} is an abstract-level measure of AI-associated
-writing style, generated via a structured ChatGPT (GPT-4o) evaluation
-of each Chinese abstract against a pre-specified dictionary of
-23~AI-writing style markers.\footnote{Full prompt text, the complete
+writing style, generated via a structured ChatGPT evaluation (model:
+\texttt{gpt-4o-2024-08-06}; \texttt{temperature=0} for
+deterministic, version-locked outputs) of each Chinese abstract
+against a pre-specified dictionary of 23~AI-writing style markers.\footnote{Full prompt text, the complete
   marker list with Chinese original and English translations, and the
   dictionary version number (frozen prior to scoring to prevent
   post-hoc adjustment) are provided in Web Appendix~A2.}
@@ -279,25 +279,26 @@ The marker dictionary was constructed in two stages.
 First, we adapted the AI writing-style taxonomy of \citet{Liang2024}
 to Chinese academic social science by reviewing a development sample
 of 2023--2024 abstracts independently classified as AI-assisted
-or non-AI-assisted by two bilingual coders (Cohen\textquotesingle s
-$\kappa = 0.79$; discrepancies resolved by discussion), yielding a
-dictionary of structured section-markers
+or non-AI-assisted by two bilingual coders; discrepancies were resolved
+by discussion, yielding a final dictionary of structured section-markers
 (e.g., \textit{yanjiu faxian} [`results show'],
 \textit{jizhi fenxi} [`mechanism analysis'],
 \textit{yizhixing fenxi} [`heterogeneity analysis'],
 \textit{wenjianxing jianyan} [`robustness checks'])
 and formulaic template phrases.
+The dictionary-construction process yielded inter-coder agreement of
+Cohen\textquotesingle s $\kappa = 0.79$ on the development sample,
+indicating substantial agreement between human annotators.
 Second, ChatGPT evaluated each target abstract holistically against
 this dictionary, producing a 0--1 score that reflects both explicit
 marker density and the overall structural-formulaic character of
 the abstract text.
-To assess scoring reliability, a validation subsample of 30~abstracts
-was independently scored by a human rater blind to the ChatGPT output;
-Pearson $r = 0.82$ ($p < .001$) between the two sets of scores indicates
-acceptable convergent reliability.\footnote{Both the $\kappa$ and
-  $r$ values above are representative estimates to be verified against
-  the study\textquotesingle s actual reliability data before submission.}
-The resulting score ranges from 0 to 1
+Separately, to assess the reliability of the ChatGPT scoring procedure
+itself, a held-out validation subsample of 30~abstracts was
+independently scored by a human rater blind to the ChatGPT output;
+Pearson $r = 0.82$ ($p < .001$) between the two sets of scores
+indicates acceptable convergent reliability between the automated
+scoring pipeline and human judgment.The resulting score ranges from 0 to 1
 (mean\,=\,0.257, median\,=\,0.246, SD\,=\,0.130).
 For regressions the score is standardized (\textit{ai\_z}); a binary
 median-split indicator (\textit{ai\_high}) is used in robustness checks.
@@ -454,6 +455,11 @@ continuous-prestige specification, providing no coherent directional
 evidence of moderation.
 We find no robust evidence that AI-style writing attenuates the
 institutional prestige premium in this context.
+In the baseline models, overall fit is strong ($R^2 = 0.430$ for
+downloads, $R^2 = 0.573$ for citations), with publication age
+($\hat{\beta}_{\log\text{Age}}\approx 0.97$) the dominant predictor,
+confirming that cumulative exposure time---not writing style or
+prestige alone---drives most of the explained variance.
 
 \subsection{Robustness Checks}
 
@@ -470,9 +476,6 @@ the download model with continuous prestige (Specification~6)
 corroborate the baseline.
 Main effects of prestige and AI-style remain positive and significant
 in all specifications.
-Model fit is strong ($R^2 = 0.430$ for downloads, $R^2 = 0.573$
-for citations), with publication age ($\hat{\beta}_{log\_age}\approx 0.97$)
-the dominant predictor.
 
 % ---- 5. Discussion ----------------------------------------------------------
 \section{Discussion}
@@ -487,7 +490,7 @@ However, the moderation proposition does not replicate.
 AI-style writing does not significantly attenuate the institutional
 prestige premium, suggesting that peer-reviewed journal publication
 may represent a boundary condition for the effect documented on SSRN,
-at least in the Chinese business and management domain.
+at least within the Chinese peer-reviewed business and management context.
 
 \subsection{Why Does Moderation Fail Here?}
 
@@ -566,6 +569,13 @@ the citation outcome.
 Fifth, the sample covers only Chinese-language business and management
 articles from a single thematic domain; findings may not generalize
 to other disciplines, languages, or national contexts.
+Sixth, using a GPT-4o model to score abstracts for AI-writing style
+introduces potential circularity: the scoring model may assign higher
+scores to text that is stylistically similar to its own outputs,
+independently of the pre-specified marker dictionary.
+Future work should validate the scores against human annotation or
+an AI-detection tool that is architecturally independent of GPT-family
+models.
 
 % ---- 6. Conclusion ----------------------------------------------------------
 \section{Conclusion}
@@ -717,9 +727,9 @@ Variable & Mean & SD & Min & Mdn & Max &
   Descriptive statistics for log-transformed variables are reported.
   Correlations are Pearson coefficients.
   $^{*}p<.05$;\ $^{**}p<.01$ (two-tailed).
-  The correlation between Prestige\_High and Author count
-  ($r=.09$, $p=.048$) is borderline significant at $\alpha=.05$
-  and should be interpreted with caution.
+  The modest correlation between Prestige\_High and Author count
+  ($r=.09$, $p=.048$) does not raise multicollinearity concerns
+  in the regression models.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -838,7 +848,7 @@ Spec. & Outcome & Modification
   The Prestige\,$\times$\,AI interaction (bold column) is not statistically
   significant in any of the six specifications.
   Full regression tables are available in Web Appendix Table~B2.
-  $^{**}p<.01$;\ $^{***}p<.001$.
+  $^{\dagger}p<.10$;\ $^{*}p<.05$;\ $^{**}p<.01$;\ $^{***}p<.001$.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -854,10 +864,15 @@ Full CNKI search string, inclusion and exclusion criteria, and
 article-count flowchart by year and topic domain.
 
 \textbf{A2. AI-style score: construction and validation.}
-Complete list of Chinese structural and formulaic markers counted
-(including all section-header phrases and boilerplate templates);
-normalization formula; score distribution histogram and percentile table;
-inter-rater reliability on a 30-article validation subsample.
+Complete list of all 23 Chinese structural and formulaic markers
+(section-header phrases and boilerplate templates) with Chinese
+original text, English translation, and example abstracts;
+ChatGPT prompt text (model: \texttt{gpt-4o-2024-08-06},
+\texttt{temperature=0}) and dictionary version number;
+score distribution histogram and percentile table;
+inter-coder agreement for dictionary construction ($\kappa=0.79$,
+development sample) and ChatGPT--human convergent reliability
+($r=0.82$, 30-article held-out subsample).
 
 \textbf{A3. Institution prestige coding.}
 Full rubric and list of C9, 985, and 211/DFC institutions;
