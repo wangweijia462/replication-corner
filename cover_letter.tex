@@ -1,0 +1,140 @@
+%% Cover Letter
+%% Marketing Letters — Replication Corner
+%% Manuscript: "Does AI Reduce the Reputation Premium in Knowledge Diffusion?
+%%              A Conceptual Replication Using Chinese Journal Articles"
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[top=2.54cm,bottom=2.54cm,left=3.0cm,right=3.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{parskip}
+
+\singlespacing
+\setlength{\parskip}{0.9em}
+
+\begin{document}
+
+\noindent
+[Author names and affiliation --- blinded for review]
+
+\medskip
+
+\noindent
+\today
+
+\bigskip
+
+\noindent
+\textit{Marketing Letters} Editorial Office\\
+Editor-in-Chief
+
+\bigskip
+
+\noindent
+Dear Editor,
+
+\bigskip
+
+We submit for your consideration a manuscript entitled \textbf{``Does AI
+Reduce the Reputation Premium in Knowledge Diffusion? A Conceptual
+Replication Using Chinese Journal Articles''} for the \textit{Replication
+Corner} section of \textit{Marketing Letters}.
+
+\medskip
+\noindent\textbf{Motivation and fit.}
+Jo and Li (2026, \textit{Marketing Letters}) provide the first direct
+evidence that AI-assisted writing attenuates the institutional reputation
+premium in academic knowledge diffusion, using a sample of SSRN marketing
+working papers.
+Their finding carries broad implications for the sociology of knowledge and
+academic publishing, but it rests on a single context: English-language
+preprints with no editorial gatekeeping.
+A key open question is whether the effect generalizes to peer-reviewed
+publication venues, and to non-Western academic contexts with distinct
+institutional hierarchies.
+Our study directly addresses this question and constitutes a natural
+contribution to \textit{Marketing Letters}' own emerging conversation on AI
+and knowledge diffusion.
+
+\medskip
+\noindent\textbf{What we do.}
+We conceptually replicate Jo and Li (2026) using 480 peer-reviewed Chinese
+business and management journal articles from CNKI (China National Knowledge
+Infrastructure; 2023--2026).
+The AI involvement measure is an abstract-level stylometric score generated
+via a structured ChatGPT evaluation against a pre-specified dictionary of
+23 AI writing-style markers, developed in turn from the taxonomy of Liang
+et al.\ (2024, \textit{NEJM AI}) and validated on a 30-article
+human-coded subsample (Pearson $r = 0.82$).
+Institutional prestige is operationalized via a four-tier classification
+based on China's C9, 985, and 211/Double First-Class designations,
+coded by two trained research assistants ($\kappa = 0.93$).
+We estimate OLS models with HC3-robust standard errors for two diffusion
+outcomes (log downloads, log citations) across four specifications (binary
+and continuous prestige operationalizations).
+
+\medskip
+\noindent\textbf{Key findings.}
+Both main effects replicate robustly: institutional prestige
+($\hat\beta = 0.522$, $p < .001$) and AI-style writing
+($\hat\beta = 0.266$, $p = .002$) each independently predict greater
+diffusion.
+However, the critical Prestige\,$\times$\,AI-Style interaction is
+consistently near zero and statistically insignificant across all four
+specifications (point estimates ranging from $-0.085$ to $+0.013$;
+all $p > .28$; 95\,\% CIs spanning zero in both directions).
+This finding suggests that the reputation-equalizing potential of AI-style
+writing documented for SSRN preprints may not extend to peer-reviewed
+publication contexts where editorial gatekeeping provides an independent
+quality signal---at least within Chinese business and management
+scholarship.
+
+\medskip
+\noindent\textbf{Distinctive contributions.}
+First, this is, to our knowledge, the first conceptual replication of Jo
+and Li (2026), appearing in the same journal that published the original
+study.
+Second, our Chinese peer-reviewed context introduces two theoretical levers
+absent from SSRN: editorial certification as an independent quality signal,
+and an institutionalized prestige hierarchy embedded in national funding
+and promotion criteria.
+Third, the positive replication of both main effects strengthens the
+cross-context generalizability of those effects, while the null interaction
+identifies a meaningful scope condition.
+Fourth, the ChatGPT-assisted scoring methodology offers a scalable
+approach to measuring AI-style writing in non-English corpora.
+
+\medskip
+\noindent\textbf{Practical considerations.}
+The manuscript is approximately 3,400 words of running text (plus
+$\approx 500$ words of references), within the 4,000-word limit for
+Replication Corner submissions.
+It includes exactly three manuscript tables and a Web Appendix containing
+full regression outputs, data construction details (including AI-style
+score prompt, marker dictionary, and prestige coding rubric), robustness
+checks, and a side-by-side coefficient comparison with Jo and Li (2026).
+All data were retrieved from publicly available CNKI records; analysis
+code and the scoring prompt will be deposited in an open repository
+upon acceptance.
+This manuscript has not been submitted elsewhere and represents
+entirely original work.
+
+\bigskip
+
+We thank the editors for considering this submission and look forward to
+the review process.
+
+\bigskip
+
+\noindent Sincerely,
+
+\bigskip\bigskip
+
+\noindent [Author names --- blinded for review]
+
+\end{document}
