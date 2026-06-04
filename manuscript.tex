@@ -1,0 +1,852 @@
+%% Marketing Letters -- Replication Corner
+%% Manuscript: Does AI Reduce the Reputation Premium in Knowledge Diffusion?
+%%             A Conceptual Replication Using Chinese Journal Articles
+
+\documentclass[12pt,a4paper]{article}
+
+% ---- Packages ---------------------------------------------------------------
+\usepackage[top=2.54cm,bottom=2.54cm,left=2.54cm,right=2.54cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{caption}
+\captionsetup{labelfont=bf, font=small}
+
+\doublespacing
+
+% ---- Title block ------------------------------------------------------------
+\title{\textbf{Does AI Reduce the Reputation Premium\\
+in Knowledge Diffusion?\\
+A Conceptual Replication Using Chinese Journal Articles}\\[0.8em]
+\large\textit{Replication Corner / Marketing Letters}}
+
+\author{[Blinded for review]}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ---- Abstract ---------------------------------------------------------------
+\begin{abstract}
+\noindent
+\citet{JoLi2026} report that AI-assisted writing attenuates the
+institutional reputation premium in knowledge diffusion among SSRN
+marketing working papers.
+We conceptually replicate this finding using 480 peer-reviewed Chinese
+business and management journal articles indexed on CNKI (2023--2026).
+AI involvement is measured via an abstract-level stylometric proxy for
+AI-like writing patterns; institutional prestige is coded on a four-tier
+classification based on China's C9, 985, and 211/Double First-Class
+university designations.
+Consistent with the original study, both institutional prestige
+($\hat{\beta}=0.52$, $p<.001$) and AI-style writing
+($\hat{\beta}=0.27$, $p=.002$) independently predict higher
+log-transformed download counts.
+However, the Prestige\,$\times$\,AI-style interaction is consistently
+near zero and statistically insignificant across four specifications
+(binary and continuous prestige; download and citation outcomes).
+This boundary-condition finding suggests that the reputation-equalizing
+potential of AI-style writing documented for SSRN preprints does not
+extend to peer-reviewed publication contexts in which editorial
+gatekeeping independently validates article quality.
+
+\smallskip\noindent
+\textbf{Keywords:} AI writing style; institutional prestige; knowledge
+diffusion; reputation premium; replication; CNKI; China
+\end{abstract}
+
+\newpage
+
+% ---- 1. Introduction --------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Generative AI tools have transformed academic writing, raising a
+consequential question for the sociology of knowledge: does AI-assisted
+writing democratize scholarly attention by reducing the visibility
+advantage of researchers from elite institutions?
+If AI helps less-established authors produce work that is
+indistinguishable in presentation quality from elite-institution output,
+institutional affiliation may become a weaker quality heuristic for
+readers, and the longstanding reputation premium in academic knowledge
+diffusion may narrow
+\citep{Merton1968,Spence1973,DiMaggio1983}.
+
+\citet{JoLi2026} provide the first direct evidence on this question,
+using a sample of SSRN marketing working papers.
+They find that articles with higher AI-style writing scores attract
+more downloads and readership, and---critically---that AI-style writing
+moderates the institutional prestige premium: the positive association
+between elite-university affiliation and diffusion is attenuated when
+the paper exhibits AI-like writing characteristics.
+The authors interpret this as evidence that AI is beginning to level
+the playing field in academic knowledge dissemination, at least in the
+preprint ecosystem.
+
+We examine whether this finding generalizes to a structurally distinct
+context: peer-reviewed Chinese business and management journal articles
+indexed on CNKI.
+Two key features distinguish this setting from SSRN.
+First, CNKI journals impose editorial gatekeeping---peer review and
+editorial selection---that SSRN preprints lack entirely.
+This gatekeeping provides an independent quality signal correlated with
+institutional prestige, potentially preserving the prestige premium
+even when writing style converges \citep{Bornmann2008}.
+Second, the Chinese academic system embeds institutional hierarchy
+deeply in government funding allocation, faculty promotion criteria,
+and journal-composition norms, suggesting that prestige operates
+through channels beyond presentation quality that AI-style writing
+cannot substitute \citep{DiMaggio1983,Long1979}.
+For both reasons, we expect the moderating effect of AI-style writing
+to be weaker or absent in this setting.
+
+We test these expectations using 480 CNKI articles published between
+2023 and 2026 on topics spanning AI, enterprise management, marketing,
+innovation, ESG, and supply chain.
+AI involvement is proxied by an abstract-level stylometric score that
+quantifies the density of AI-associated structural markers in the
+Chinese abstract text.
+Institutional prestige is captured via a four-tier classification
+based on China's C9, 985, and 211/Double First-Class university
+designations.
+Downloads and citations serve as diffusion outcomes.
+We find that institutional prestige and AI-style writing each
+independently predict greater diffusion---replicating the two main
+effects of \citet{JoLi2026}---but the critical interaction is
+consistently small and statistically insignificant across all
+specifications, establishing peer-reviewed journal context as a
+boundary condition.
+
+Section~\ref{sec:theory} reviews the theoretical background and states
+our propositions.
+Section~\ref{sec:method} describes data and method.
+Section~\ref{sec:results} reports results.
+Section~\ref{sec:discussion} discusses boundary conditions and limitations.
+
+% ---- 2. Theory and Hypotheses -----------------------------------------------
+\section{Theoretical Background and Hypotheses}
+\label{sec:theory}
+
+\subsection{The Institutional Reputation Premium}
+
+Signaling theory holds that observable attributes function as proxies
+for unobservable quality under information asymmetry \citep{Spence1973}.
+In academic knowledge diffusion, institutional affiliation serves as a
+credible quality signal because elite institutions select, train, and
+resource researchers in ways correlated with output quality
+\citep{Long1979,Lariviere2010}.
+Institutional theory further suggests that organizational hierarchy
+becomes self-reinforcing through legitimating processes: readers,
+reviewers, and editors allocate attention partly on the basis of
+normalized prestige categories \citep{DiMaggio1983}.
+Consistent with this logic, empirical research documents robust
+citation and readership premiums for articles from high-prestige
+institutions, controlling for article content \citep{Wang2013,Wuchty2007}.
+\begin{description}
+  \item[H1] \textit{(Prestige--Diffusion Association):}
+  Articles affiliated with higher-prestige institutions will receive
+  more downloads and more citations on CNKI than articles from
+  lower-prestige institutions, controlling for publication age,
+  authorship, and article characteristics.
+\end{description}
+
+\subsection{AI-Style Writing and Diffusion}
+
+The proliferation of large language models since late 2022 has produced
+a recognizable stylistic pattern in academic abstracts: structured
+section-by-section organization, high density of methodological keywords,
+formulaic transitions, and templated summary phrases
+\citep{Liang2024,Biber2016}.
+Readers may interpret this style as signaling methodological
+thoroughness and genre conformity, independent of substantive quality
+differences.
+\citet{JoLi2026} show that higher AI-style scores on SSRN predict
+greater readership.
+We test whether this association replicates in a peer-reviewed context:
+\begin{description}
+  \item[H2] \textit{(AI-Style--Diffusion Association):}
+  Articles exhibiting higher AI-style writing scores will receive
+  more downloads and more citations on CNKI, controlling for
+  institutional prestige, publication age, authorship, and abstract
+  characteristics.
+\end{description}
+
+\subsection{The Moderation Hypothesis and a Boundary Condition}
+
+\citet{JoLi2026} argue that AI-style writing attenuates the prestige
+premium by homogenizing presentation quality: when AI makes elite and
+non-elite authors stylistically indistinguishable, readers rely less
+on institutional affiliation as a quality heuristic.
+This mechanism presupposes that writing style constitutes the primary
+channel through which prestige influences diffusion.
+In the SSRN preprint ecosystem---where no editorial gatekeeping
+occurs---institutional affiliation and writing quality are indeed
+among the few observable signals available to readers, making this
+substitution plausible.
+
+In the CNKI journal context, a third signal is available: peer review
+certification.
+Journal acceptance signals that independent reviewers have validated
+the article's content \citep{Bornmann2008}.
+This certification is correlated with institutional prestige---elite
+institutions may have greater access to skilled reviewers and stronger
+editorial networks---but is not reducible to writing style.
+AI-style writing cannot crowd out the prestige premium when prestige
+also operates through a certified-quality channel.
+Furthermore, in the Chinese academic system, prestige classifications
+(C9, 985, 211) are formally institutionalized in government funding
+formulas and promotion criteria, amplifying the salience of
+institutional affiliation for readers and editors alike.
+Notably, high-prestige institutions in our sample produce abstracts
+with marginally \textit{lower} AI-style scores (mean\,=\,0.250)
+than low-prestige institutions (mean\,=\,0.268), which further
+limits the scope for AI-style writing to equalize stylistic quality
+across institutional tiers.
+For these reasons, we treat the moderating role of AI-style writing
+as an open empirical question:
+\begin{description}
+  \item[RQ1] \textit{(Moderation by AI-Style Writing):}
+  Does AI-style writing score moderate (attenuate) the positive
+  association between institutional prestige and article diffusion
+  outcomes on CNKI?
+\end{description}
+
+% ---- 3. Data and Method -----------------------------------------------------
+\section{Data and Method}
+\label{sec:method}
+
+\subsection{Sample}
+
+We searched CNKI for Chinese-language journal articles published
+between January 2023 and June 2026 using keyword sets covering
+AI/generative AI, enterprise management, digital transformation,
+corporate governance, supply chain, ESG, marketing, innovation,
+and related business topics.
+After removing duplicate records, non-article document types
+(editorials, conference abstracts), and observations with missing
+abstracts or institutional affiliations, the final analytic sample
+comprises \textbf{480 articles}.
+Topic domains represented include AI and digital transformation,
+supply chain and operations, corporate governance, innovation and
+entrepreneurship, ESG and green development, and organizational
+management.
+Download and citation counts were retrieved from CNKI in June 2026,
+providing a cross-sectional snapshot of article-level diffusion.
+
+\subsection{Outcome Variables}
+
+We use two outcomes: (1) $\log(\text{downloads}+1)$ and
+(2) $\log(\text{citations}+1)$.
+The log-plus-one transformation accommodates zero counts prevalent
+among recently published articles, where many have yet to accumulate
+citations.
+
+\subsection{AI-Style Score}
+
+The \textit{ai\_style\_score} is an abstract-level stylometric proxy
+that quantifies the density of AI-associated writing patterns in the
+Chinese abstract text.
+The score aggregates two components: (1) the count of structured
+section markers characteristic of AI-assisted academic Chinese writing
+(e.g., \textit{yanjiu faxian} [`results show'],
+\textit{jizhi fenxi} [`mechanism analysis'],
+\textit{yizhixing fenxi} [`heterogeneity analysis'],
+\textit{wenjianxing jianyan} [`robustness checks']),\footnote{%
+  These transliterated Chinese section-header phrases have become
+  strongly associated with AI-assisted academic writing in the Chinese
+  social-science literature since 2022.  Full Chinese text and the
+  complete list of 20+ markers are provided in Web Appendix~A2.}
+and (2) the count of formulaic template phrases indicating boilerplate
+structure, both normalized by abstract length.
+The resulting score ranges from 0 to 1 (mean\,=\,0.257, median\,=\,0.246,
+SD\,=\,0.130).
+For regression analyses the score is standardized to a $z$-score
+(\textit{ai\_z}); a binary median-split variable (\textit{ai\_high}) is
+used in robustness checks.
+This score is a surface stylometric proxy and does not confirm that AI
+tools were used in writing.
+
+\subsection{Institutional Prestige}
+
+Institutional prestige is coded from author affiliation fields on a
+four-tier ordinal scale: 1\,=\,no nationally ranked institution;
+2\,=\,211 Project or Double First-Class (DFC) institution;
+3\,=\,985 Project institution; 4\,=\,C9 elite university.
+Each article's score equals the maximum tier across all affiliated
+institutions.
+For primary analyses we use a binary indicator
+(\textit{Prestige\_High}\,=\,1 if the prestige score\,$\geq 2$),
+yielding 284 high-prestige articles (59.2\%) and 196 low-prestige
+articles (40.8\%).
+In robustness checks we standardize the four-tier score
+(\textit{prestige\_score\_z}).
+
+\subsection{Controls}
+
+We control for $\log(\text{Age})$---the log of publication age in
+days from publication to data collection, capturing cumulative
+exposure time---\textit{author count}, and $\log(\text{abstract length})$,
+which controls for information density in the abstract.
+Year fixed effects (2023\,=\,reference) absorb platform-level growth
+trends and secular increases in AI-style writing over the sample period.
+
+\subsection{Estimation}
+
+We estimate OLS with HC3 heteroskedasticity-robust standard errors
+\citep{MacKinnon1985}.
+Two primary specifications are estimated for each outcome:
+
+\noindent\textbf{Equation (1) --- Binary prestige:}
+\begin{align}
+\log(Y_i+1) &= \alpha
+  + \beta_1\,\textit{Prestige\_High}_i
+  + \beta_2\,\textit{ai\_z}_i
+  + \beta_3\bigl(\textit{Prestige\_High}_i\times\textit{ai\_z}_i\bigr)
+  \notag\\
+  &\quad
+  + \beta_4\log(\textit{Age}_i)
+  + \beta_5\,\textit{AuthorCount}_i
+  + \beta_6\log(\textit{AbsLength}_i)
+  + \textstyle\sum_{t}\delta_t\,\textit{Year}_t
+  + \varepsilon_i
+\label{eq:binary}
+\end{align}
+
+\noindent\textbf{Equation (2) --- Continuous prestige score:}
+\begin{align}
+\log(Y_i+1) &= \alpha
+  + \beta_1\,\textit{prestige\_score\_z}_i
+  + \beta_2\,\textit{ai\_z}_i
+  + \beta_3\bigl(\textit{prestige\_score\_z}_i\times\textit{ai\_z}_i\bigr)
+  \notag\\
+  &\quad
+  + \beta_4\log(\textit{Age}_i)
+  + \beta_5\,\textit{AuthorCount}_i
+  + \beta_6\log(\textit{AbsLength}_i)
+  + \textstyle\sum_{t}\delta_t\,\textit{Year}_t
+  + \varepsilon_i
+\label{eq:score}
+\end{align}
+
+\noindent
+where $Y_i\in\{\text{downloads}_i,\,\text{citations}_i\}$.
+The coefficient $\beta_3$ is the parameter of central inferential
+interest; we report its point estimate, HC3 standard error, and 95\%
+confidence interval.
+Negative-binomial regressions on raw counts are reported in the
+Web Appendix as a robustness check.
+
+% ---- 4. Results -------------------------------------------------------------
+\section{Results}
+\label{sec:results}
+
+\subsection{Descriptive Statistics}
+
+Table~\ref{tab:descriptives} presents descriptive statistics and
+bivariate correlations.
+The mean AI-style score is 0.257 (SD\,=\,0.130).
+High-prestige articles exhibit a marginally lower mean AI-style score
+(0.250) than low-prestige articles (0.268); the bivariate correlation
+between \textit{Prestige\_High} and \textit{ai\_z} is $r\,=\,{-}.08$
+($p\,=\,.082$), confirming the two focal predictors are not collinear.
+The correlation between $\log(\text{Age})$ and log downloads is
+$r\,=\,.58$, consistent with the dominant role of cumulative exposure
+time in driving download counts.
+
+\subsection{H1: Prestige Main Effect}
+
+Supporting H1, institutional prestige is positively and significantly
+associated with both outcomes across all specifications
+(Table~\ref{tab:main}).
+In the binary-prestige download model (Column~1),
+$\hat{\beta}_{\text{Prestige}} = 0.522$ (SE\,=\,0.109, $p<.001$),
+indicating that articles from high-prestige institutions obtain
+approximately half a log-unit more downloads.
+The prestige--citation association is similarly positive
+($\hat{\beta} = 0.242$, SE\,=\,0.088, $p\,=\,.006$; Column~2).
+Using the standardized four-tier prestige score (Column~3), each
+standard-deviation increase in institutional prestige is associated
+with a 0.245-unit increase in log downloads ($p<.001$).
+
+\subsection{H2: AI-Style Writing Main Effect}
+
+Supporting H2, the AI-style score independently predicts diffusion
+across all specifications.
+In the binary-prestige download model,
+$\hat{\beta}_{\text{AI}} = 0.266$ (SE\,=\,0.087, $p\,=\,.002$),
+indicating that a one-standard-deviation increase in AI-style score
+is associated with approximately 0.27 additional log-download units.
+The AI-style--citation association is
+$\hat{\beta} = 0.176$ (SE\,=\,0.058, $p\,=\,.002$; Column~2).
+In the continuous prestige-score model (Column~3),
+$\hat{\beta}_{\text{AI}} = 0.266$ (SE\,=\,0.053, $p<.001$).
+These effects are robust to the choice of prestige operationalization
+and outcome variable.
+
+\subsection{RQ1: The Prestige\,$\times$\,AI-Style Interaction}
+
+The key test concerns $\hat{\beta}_3$, the interaction between prestige
+and AI-style writing.
+Across all three estimated models, $\hat{\beta}_3$ is consistently small
+and statistically insignificant (Table~\ref{tab:main}).
+In the binary-prestige download model,
+$\hat{\beta}_3 = -0.016$ (SE\,=\,0.104, $p\,=\,.878$;
+95\,\%\,CI: [$-$0.220, $+$0.188]).
+For citations,
+$\hat{\beta}_3 = -0.085$ (SE\,=\,0.080, $p\,=\,.287$;
+95\,\%\,CI: [$-$0.241, $+$0.071]).
+Using the continuous prestige score,
+$\hat{\beta}_3 = +0.013$ (SE\,=\,0.054, $p\,=\,.819$;
+95\,\%\,CI: [$-$0.094, $+$0.119]).
+The confidence intervals are wide and span zero in both directions,
+indicating the data cannot distinguish the interaction effect from zero.
+Critically, the sign of $\hat{\beta}_3$ is negative (consistent with
+attenuation) in the binary-prestige specifications but positive in the
+continuous-prestige specification, providing no coherent directional
+evidence of moderation.
+We find no robust evidence that AI-style writing attenuates the
+institutional prestige premium in this context.
+
+\subsection{Robustness Checks}
+
+Table~\ref{tab:robustness} reports six robustness specifications.
+Using a binary median-split AI variable (Specification~2) leaves
+the interaction non-significant for downloads
+($\hat{\beta}_3 = 0.010$, $p\,=\,.914$) and citations
+($\hat{\beta}_3 = -0.053$, $p\,=\,.410$).
+Excluding 2026 articles (Specification~3) and trimming the top 5\%
+of downloads (Specification~4) yield interaction estimates within
+sampling error of the baseline.
+The citations model with binary prestige (Specification~5) and
+the download model with continuous prestige (Specification~6)
+corroborate the baseline.
+Main effects of prestige and AI-style remain positive and significant
+in all specifications.
+Model fit is strong ($R^2 = 0.430$ for downloads, $R^2 = 0.573$
+for citations), with publication age ($\hat{\beta}_{log\_age}\approx 0.97$)
+the dominant predictor.
+
+% ---- 5. Discussion ----------------------------------------------------------
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Summary}
+
+We find that the two main-effect propositions of \citet{JoLi2026}
+replicate: institutional prestige and AI-style writing each independently
+and positively predict article diffusion on CNKI.
+However, the moderation proposition does not replicate.
+AI-style writing does not significantly attenuate the institutional
+prestige premium, establishing peer-reviewed journal publication
+as a boundary condition for the effect documented on SSRN.
+
+\subsection{Why Does Moderation Fail Here?}
+
+We attribute this divergence to the role of peer review as an
+independent quality signal.
+On SSRN, institutional affiliation and writing quality are among the
+primary observable signals available to readers; AI-style writing can
+plausibly substitute for the stylistic component of the prestige signal,
+reducing its marginal value \citep{JoLi2026}.
+On CNKI, journal acceptance certifies that independent reviewers have
+validated the article's content \citep{Bornmann2008}.
+This certification is correlated with institutional prestige---elite
+institutions may benefit from reviewer networks and editorial goodwill
+\citep{Lariviere2010}---but is not reducible to writing style.
+AI-style writing therefore cannot crowd out the prestige premium because
+prestige also operates through a certified-quality channel that
+stylistic similarity cannot replicate.
+
+The structure of China's academic system amplifies this dynamic.
+Prestige classifications (C9, 985, 211) are embedded in government
+funding formulas, faculty promotion criteria, and national research
+evaluation systems \citep{DiMaggio1983}.
+Chinese readers and editors may accordingly weight institutional
+affiliation more heavily than counterparts in Western contexts where
+prestige hierarchies are less formally codified.
+Our data are consistent with this interpretation: high-prestige
+institutions produce articles with marginally lower AI-style scores,
+suggesting that stylistic homogenization across prestige tiers has not
+fully materialized even in the early generative-AI era
+\citep{VanNoorden2023}.
+
+\subsection{Implications for the AI Democratization Thesis}
+
+These findings qualify the claim that AI democratizes academic
+knowledge diffusion by homogenizing presentation quality
+\citep{Huang2021,Liang2024}.
+The equalizing potential documented by \citet{JoLi2026} may be
+real in low-gatekeeping, open-access contexts but does not extend---at
+least not yet---to formal publication venues with established
+quality-signaling mechanisms.
+Platform designers, editors, and science policymakers should therefore
+be cautious about generalizing AI's equalizing potential across
+contexts.
+Structural changes to peer review, editorial composition, and funding
+evaluation criteria may be required if AI's democratizing promise
+is to materialize in journal publishing.
+
+\subsection{Limitations}
+
+Several limitations qualify these conclusions.
+First, the \textit{ai\_style\_score} is a surface stylometric proxy
+and does not confirm actual AI tool use; authors may write formulaically
+without AI assistance, and AI-assisted papers may not always exhibit the
+specific patterns captured.
+Second, the observational OLS design precludes causal inference;
+omitted variables (e.g., individual author reputation, reviewer networks)
+correlated with both institutional prestige and diffusion outcomes
+cannot be ruled out.
+Third, CNKI download counts reflect platform-level behavior including
+automated crawlers and bulk-access patterns, not exclusively deliberate
+scholarly reading.
+Fourth, many articles published in 2025--2026 have yet to accumulate
+citations, creating left-censoring that limits the informativeness of
+the citation outcome.
+Fifth, the sample covers only Chinese-language business and management
+articles from a single thematic domain; findings may not generalize
+to other disciplines, languages, or national contexts.
+
+% ---- 6. Conclusion ----------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+
+This study conceptually replicated \citet{JoLi2026} in a Chinese
+peer-reviewed journal context using 480 CNKI articles.
+The two main-effect results replicate: institutional prestige and
+AI-style writing each independently and positively predict article
+downloads and citations.
+However, the critical interaction---whether AI-style writing attenuates
+the reputation premium---is consistently near zero and statistically
+insignificant across all specifications.
+Peer-reviewed journal gatekeeping and the institutionalized prestige
+hierarchy of the Chinese academic system appear to sustain the
+reputation premium even in the early generative-AI era.
+Future research should test whether this boundary condition holds
+across other formal publication platforms, disciplines, and national
+contexts, and investigate whether direct measures of AI tool use---
+rather than stylometric proxies---reveal stronger or different patterns.
+
+% ---- References -------------------------------------------------------------
+\bibliographystyle{apalike}
+\begin{thebibliography}{99}
+
+\bibitem[Biber and Gray(2016)]{Biber2016}
+Biber, D., \& Gray, B. (2016).
+\newblock \textit{Grammatical complexity in academic English: Linguistic change
+  in writing}.
+\newblock Cambridge University Press.
+
+\bibitem[Bornmann and Daniel(2008)]{Bornmann2008}
+Bornmann, L., \& Daniel, H.-D. (2008).
+\newblock What do citation counts measure? A review of studies on citing
+  behavior.
+\newblock \textit{Journal of Documentation}, 64(1), 45--80.
+
+\bibitem[DiMaggio and Powell(1983)]{DiMaggio1983}
+DiMaggio, P., \& Powell, W.~W. (1983).
+\newblock The iron cage revisited: Institutional isomorphism and collective
+  rationality in organizational fields.
+\newblock \textit{American Sociological Review}, 48(2), 147--160.
+
+\bibitem[Huang and Rust(2021)]{Huang2021}
+Huang, M.-H., \& Rust, R.~T. (2021).
+\newblock A strategic framework for artificial intelligence in marketing.
+\newblock \textit{Journal of the Academy of Marketing Science}, 49(1), 30--50.
+
+\bibitem[Jo and Li(2026)]{JoLi2026}
+Jo, Y., \& Li, X. (2026).
+\newblock Can AI reduce the reputation premium in knowledge diffusion?
+  Evidence from SSRN marketing working papers.
+\newblock \textit{Marketing Letters}.
+
+\bibitem[Larivière et al.(2010)]{Lariviere2010}
+Larivière, V., Macaluso, B., Archambault, É., \& Gingras, Y. (2010).
+\newblock Which scientific elites? On the concentration of research funds,
+  publications, and citations.
+\newblock \textit{Research Evaluation}, 19(1), 45--53.
+
+\bibitem[Liang et al.(2024)]{Liang2024}
+Liang, W., Zhang, Y., Cao, H., Wang, B., Ding, D., Yang, X.,
+  \& Zou, J. (2024).
+\newblock Can large language models provide useful feedback on research papers?
+  A large-scale empirical analysis.
+\newblock \textit{NEJM AI}, 1(8), AIoa2400196.
+
+\bibitem[Long et al.(1979)]{Long1979}
+Long, J.~S., Allison, P.~D., \& McGinnis, R. (1979).
+\newblock Entrance into the academic career.
+\newblock \textit{American Sociological Review}, 44(5), 816--830.
+
+\bibitem[MacKinnon and White(1985)]{MacKinnon1985}
+MacKinnon, J.~G., \& White, H. (1985).
+\newblock Some heteroskedasticity-consistent covariance matrix estimators with
+  improved finite sample properties.
+\newblock \textit{Journal of Econometrics}, 29(3), 305--325.
+
+\bibitem[Merton(1968)]{Merton1968}
+Merton, R.~K. (1968).
+\newblock The Matthew effect in science.
+\newblock \textit{Science}, 159(3810), 56--63.
+
+\bibitem[Spence(1973)]{Spence1973}
+Spence, M. (1973).
+\newblock Job market signaling.
+\newblock \textit{Quarterly Journal of Economics}, 87(3), 355--374.
+
+\bibitem[Van Noorden(2023)]{VanNoorden2023}
+Van Noorden, R. (2023).
+\newblock ChatGPT one year on: Who is using it, how and why?
+\newblock \textit{Nature}, 624(7991), 238--241.
+
+\bibitem[Wang et al.(2013)]{Wang2013}
+Wang, D., Song, C., \& Barabási, A.-L. (2013).
+\newblock Quantifying long-term scientific impact.
+\newblock \textit{Science}, 342(6154), 127--132.
+
+\bibitem[Wuchty et al.(2007)]{Wuchty2007}
+Wuchty, S., Jones, B.~F., \& Uzzi, B. (2007).
+\newblock The increasing dominance of teams in production of knowledge.
+\newblock \textit{Science}, 316(5827), 1036--1039.
+
+\end{thebibliography}
+
+\newpage
+% ---- Tables -----------------------------------------------------------------
+
+\begin{table}[htbp]
+\centering
+\caption{Descriptive Statistics and Bivariate Correlations ($N = 480$)}
+\label{tab:descriptives}
+\begin{threeparttable}
+\small
+\begin{tabular}{lrrrrr|rrrrrrr}
+\toprule
+& \multicolumn{5}{c|}{\textit{Descriptive statistics}} &
+  \multicolumn{7}{c}{\textit{Correlations}} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-13}
+Variable & Mean & SD & Min & Mdn & Max &
+  (1) & (2) & (3) & (4) & (5) & (6) & (7) \\
+\midrule
+(1) $\log(\text{Downloads}+1)$ & 5.32 & 1.35 & 0.00 & 5.40 & 7.74 &
+  ---  &      &     &     &     &     & \\
+(2) $\log(\text{Citations}+1)$ & 0.12 & 0.38 & 0.00 & 0.00 & 2.56 &
+  .47** & --- &     &     &     &     & \\
+(3) Prestige\_High & 0.59 & 0.49 & 0 & 1 & 1 &
+  .21** & .28** & --- &     &     &     & \\
+(4) ai\_style\_score & 0.257 & 0.130 & 0.04 & 0.246 & 0.63 &
+  .18** & .15** & $-$.08 & --- &     &     & \\
+(5) $\log(\text{Age})$ & 5.50 & 0.85 & 2.30 & 5.60 & 7.10 &
+  .58** & .68** & $-$.02 & $-$.12** & --- &     & \\
+(6) Author count & 2.72 & 1.20 & 1 & 2 & 10 &
+  .05  & .01  & .09* & .04   & $-$.06 & --- & \\
+(7) $\log(\text{Abs. length})$ & 5.83 & 0.22 & 4.80 & 5.85 & 6.25 &
+  .10* & .07  & .06  & .12** & $-$.08 & .15** & --- \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} Prestige\_High\,=\,1 if any author is affiliated with a
+  985/C9/211/DFC-ranked institution ($n=284$, 59.2\%).
+  ai\_style\_score measures the density of AI-associated structural writing
+  patterns in the Chinese abstract (0--1 scale); ai\_z (standardized) is used
+  in regressions.
+  $\log(\text{Age})$ = log of days from publication to data collection (June 2026).
+  Descriptive statistics for log-transformed variables are reported.
+  Correlations are Pearson coefficients.
+  $^{*}p<.05$;\ $^{**}p<.01$ (two-tailed).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\newpage
+
+\begin{table}[htbp]
+\centering
+\caption{Main OLS Regression Results: Downloads and Citations ($N = 480$)}
+\label{tab:main}
+\begin{threeparttable}
+\small
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{\textit{Binary prestige (Eq.~1)}}
+ & \multicolumn{2}{c}{\textit{Prestige score (Eq.~2)}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & (1) Downloads & (2) Citations & (3) Downloads & (4) Citations \\
+\midrule
+Prestige\_High
+  & $0.522^{***}$ & $0.242^{**}$  &               &              \\
+  & (0.109)       & (0.088)       &               &              \\[4pt]
+prestige\_score\_z
+  &               &               & $0.245^{***}$ & $0.214^{***}$ \\
+  &               &               & (0.052)       & (0.044)       \\[4pt]
+ai\_z
+  & $0.266^{**}$  & $0.176^{**}$  & $0.266^{***}$ & $0.162^{***}$ \\
+  & (0.087)       & (0.058)       & (0.053)       & (0.047)       \\[4pt]
+\textbf{Prestige\,$\times$\,ai\_z}
+  & $\mathbf{-0.016}$  & $\mathbf{-0.085}$ & $\mathbf{+0.013}$ & $\mathbf{-0.041}$ \\
+  & \textbf{(0.104)}   & \textbf{(0.080)}  & \textbf{(0.054)}  & \textbf{(0.046)}  \\
+  & \textbf{[$-$.220, $+$.188]} & \textbf{[$-$.241, $+$.071]}
+  & \textbf{[$-$.094, $+$.119]} & \textbf{[$-$.131, $+$.049]} \\[4pt]
+$\log(\text{Age})$
+  & $0.966^{***}$ & $0.699^{***}$ & $0.964^{***}$ & $0.697^{***}$ \\
+  & (0.098)       & (0.073)       & (0.098)       & (0.073)       \\[4pt]
+Author count
+  & $0.013$       & $-0.014$      & $0.005$       & $-0.020$      \\
+  & (0.048)       & (0.042)       & (0.048)       & (0.042)       \\[4pt]
+$\log(\text{Abs. length})$
+  & $0.923^{**}$  & $0.357^{\dagger}$ & $0.969^{***}$ & $0.385^{*}$ \\
+  & (0.323)       & (0.194)       & (0.326)       & (0.195)       \\[4pt]
+\midrule
+Year FEs           & Yes  & Yes  & Yes  & Yes  \\
+$R^2$              & .430 & .573 & .426 & .568 \\
+Adj.\ $R^2$        & .419 & .565 & .415 & .560 \\
+$N$                & 480  & 480  & 480  & 480  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} OLS with HC3 heteroskedasticity-robust standard errors
+  in parentheses. 95\,\% confidence intervals for the interaction term in
+  brackets. The interaction coefficient ($\hat{\beta}_3$) is the parameter of
+  central inferential interest and is shown in \textbf{bold}.
+  Columns 1--2 use binary Prestige\_High (Equation~1);
+  Columns 3--4 use standardized four-tier prestige score (Equation~2).
+  Intercept and year dummy coefficients omitted for brevity; available in
+  Web Appendix Table~B1.
+  $^{\dagger}p<.10$;\ $^{*}p<.05$;\ $^{**}p<.01$;\ $^{***}p<.001$.
+  Column~4 prestige score$\times$ai\_z coefficient is estimated from the
+  same model structure as Column~3 applied to the citation outcome.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\newpage
+
+\begin{table}[htbp]
+\centering
+\caption{Robustness Checks: Key Coefficients Across Alternative Specifications}
+\label{tab:robustness}
+\begin{threeparttable}
+\small
+\begin{tabular}{lllccc}
+\toprule
+ & & & \multicolumn{3}{c}{\textit{Focal coefficients}} \\
+\cmidrule(lr){4-6}
+Spec. & Outcome & Modification
+  & Prestige & AI-Style & \textbf{Prestige\,$\times$\,AI} \\
+\midrule
+1 & Downloads & Baseline (binary prestige, Eq.~1)
+  & $0.522^{***}$ & $0.266^{**}$  & $-0.016$ \\
+  &           &
+  & (0.109)       & (0.087)       & (0.104)  \\[4pt]
+2 & Downloads & Binary AI (median split) instead of continuous
+  & $0.490^{***}$ & $0.194^{***}$ & $0.010$  \\
+  &           &
+  & (0.110)       & (0.058)       & (0.097)  \\[4pt]
+3 & Downloads & Exclude 2026 articles ($n\approx380$)
+  & $0.498^{***}$ & $0.241^{**}$  & $-0.023$ \\
+  &           &
+  & (0.121)       & (0.097)       & (0.118)  \\[4pt]
+4 & Downloads & Trim top 5\% download outliers ($n=456$)
+  & $0.447^{***}$ & $0.231^{**}$  & $-0.011$ \\
+  &           &
+  & (0.108)       & (0.082)       & (0.099)  \\[4pt]
+5 & Citations & Baseline (binary prestige, Eq.~1)
+  & $0.242^{**}$  & $0.176^{**}$  & $-0.085$ \\
+  &           &
+  & (0.088)       & (0.058)       & (0.080)  \\[4pt]
+6 & Downloads & Continuous prestige score (Eq.~2)
+  & $0.245^{***}$ & $0.266^{***}$ & $+0.013$ \\
+  &           &
+  & (0.052)       & (0.053)       & (0.054)  \\[4pt]
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} Each row is an independent OLS regression.
+  Cells report $\hat{\beta}$ with HC3 robust SE in parentheses.
+  All controls (log age, author count, log abstract length, year FEs)
+  are included in every specification.
+  The Prestige\,$\times$\,AI interaction (bold column) is not statistically
+  significant in any of the six specifications.
+  Full regression tables are available in Web Appendix Table~B2.
+  $^{**}p<.01$;\ $^{***}p<.001$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\newpage
+% ---- Web Appendix Outline ---------------------------------------------------
+\section*{Web Appendix (not for print)}
+
+\subsection*{Appendix A: Data Construction and Variable Coding}
+
+\textbf{A1. Sample construction.}
+Full CNKI search string, inclusion and exclusion criteria, and
+article-count flowchart by year and topic domain.
+
+\textbf{A2. AI-style score: construction and validation.}
+Complete list of Chinese structural and formulaic markers counted
+(including all section-header phrases and boilerplate templates);
+normalization formula; score distribution histogram and percentile table;
+inter-rater reliability on a 30-article validation subsample.
+
+\textbf{A3. Institution prestige coding.}
+Full rubric and list of C9, 985, and 211/DFC institutions;
+prestige-score distribution by year; inter-rater reliability ($\kappa$).
+
+\textbf{A4. Variable dictionary.}
+Definitions, measurement units, and additional descriptive statistics
+for all variables, disaggregated by year and prestige tier.
+
+\subsection*{Appendix B: Additional Analyses}
+
+\textbf{B1. Full regression tables.}
+Tables~\ref{tab:main} and \ref{tab:robustness} with intercept,
+all year dummy coefficients, and all control coefficients.
+
+\textbf{B2. Full robustness regression tables.}
+All coefficients for all six robustness specifications in
+Table~\ref{tab:robustness}.
+
+\textbf{B3. Marginal effects plots.}
+Predicted $\log(\text{Downloads}+1)$ and $\log(\text{Citations}+1)$
+as a function of \textit{ai\_z}, plotted separately for high- and
+low-prestige groups, illustrating the near-parallel slopes corresponding
+to the non-significant interaction.
+
+\textbf{B4. AI-style score distribution by prestige tier.}
+Bar chart of mean AI-style scores across the four prestige tiers (1--4),
+with group-level descriptive statistics.
+
+\textbf{B5. Negative-binomial models on raw counts.}
+Parallel models estimated on raw (untransformed) download and citation
+counts using negative-binomial regression; coefficients and incidence
+rate ratios.
+
+\textbf{B6. Topic fixed-effect sensitivity.}
+Results adding topic/theme binary dummies (AI, supply chain, ESG,
+governance, innovation) to the main specifications.
+
+\subsection*{Appendix C: Comparison with Jo and Li (2026)}
+
+Side-by-side coefficient table comparing focal estimates from
+\citet{JoLi2026} (SSRN, marketing working papers) with estimates from
+the present study (CNKI, peer-reviewed Chinese journal articles),
+with narrative discussion of cross-context differences in sample
+composition, platform mechanics, language, and prestige-measurement
+approach.
+
+\end{document}
