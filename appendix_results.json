@@ -1,0 +1,1663 @@
+{
+  "meta": {
+    "N_raw_chunks": 857,
+    "N_parsed": 849,
+    "N_analytic": 843,
+    "N_mktg_mgmt": 239,
+    "pct_mktg_mgmt": 28.4,
+    "collection_date": "2026-06-05"
+  },
+  "year_distribution": {
+    "2023": 100,
+    "2024": 151,
+    "2025": 395,
+    "2026": 197
+  },
+  "prestige_tier_distribution": {
+    "1": 280,
+    "2": 191,
+    "3": 246,
+    "4": 126
+  },
+  "prestige_high_n": 563,
+  "prestige_high_pct": 66.79,
+  "prestige_first_high_pct": 51.7,
+  "topic_distribution": {
+    "AI_Digital": 745,
+    "Other": 27,
+    "Innovation": 26,
+    "SupplyChain": 21,
+    "ESG_Green": 15,
+    "Marketing": 7,
+    "Governance": 2
+  },
+  "ai_score_mean": 0.0488,
+  "ai_score_sd": 0.0498,
+  "ai_score_median": 0.0435,
+  "ai_score_max": 0.2609,
+  "ai_score_deciles": [
+    0.0,
+    0.0,
+    0.0,
+    0.0435,
+    0.0435,
+    0.0435,
+    0.087,
+    0.087,
+    0.1304,
+    0.2609
+  ],
+  "ai_by_year": {
+    "2023": {
+      "mean": 0.0309,
+      "median": 0.0217,
+      "sd": 0.0367
+    },
+    "2024": {
+      "mean": 0.0412,
+      "median": 0.0435,
+      "sd": 0.0451
+    },
+    "2025": {
+      "mean": 0.0496,
+      "median": 0.0435,
+      "sd": 0.0514
+    },
+    "2026": {
+      "mean": 0.062,
+      "median": 0.0435,
+      "sd": 0.0522
+    }
+  },
+  "ai_by_prestige_tier": {
+    "1": {
+      "mean": 0.0502,
+      "median": 0.0435,
+      "n": 280
+    },
+    "2": {
+      "mean": 0.0517,
+      "median": 0.0435,
+      "n": 191
+    },
+    "3": {
+      "mean": 0.0449,
+      "median": 0.0435,
+      "n": 246
+    },
+    "4": {
+      "mean": 0.049,
+      "median": 0.0435,
+      "n": 126
+    }
+  },
+  "marker_frequency": {
+    "研究发现": 338,
+    "结果表明": 108,
+    "异质性分析": 80,
+    "稳健性检验": 77,
+    "机制分析": 72,
+    "研究表明": 42,
+    "面板数据": 38,
+    "双重差分": 36,
+    "本研究": 35,
+    "固定效应": 27,
+    "实证研究": 22,
+    "调节效应": 16,
+    "中介效应": 16,
+    "进一步分析": 16,
+    "研究结论": 7,
+    "基准回归": 6,
+    "创新性地": 5,
+    "验证了": 5
+  },
+  "correlations": {
+    "r_prestige_ai": -0.0286,
+    "p_prestige_ai": 0.4073,
+    "r_prestige_downloads": 0.0457,
+    "p_prestige_downloads": 0.1853,
+    "r_prestige_citations": 0.0346,
+    "p_prestige_citations": 0.3151,
+    "r_ai_downloads": 0.0483,
+    "p_ai_downloads": 0.1609,
+    "r_ai_citations": -0.1189,
+    "p_ai_citations": 0.0005,
+    "r_age_downloads": 0.5634,
+    "p_age_downloads": 0.0,
+    "r_age_citations": 0.7896,
+    "p_age_citations": 0.0
+  },
+  "B1_main_regressions": {
+    "eq1_downloads_binary": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -6.5064,
+          "se": 8.5643,
+          "p": 0.4474,
+          "ci_lo": -23.2921,
+          "ci_hi": 10.2792
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4517,
+          "se": 0.1178,
+          "p": 0.0001,
+          "ci_lo": 0.2209,
+          "ci_hi": 0.6826
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.3905,
+          "se": 0.1432,
+          "p": 0.0064,
+          "ci_lo": 0.1099,
+          "ci_hi": 0.671
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.0771,
+          "se": 0.2484,
+          "p": 0.7563,
+          "ci_lo": -0.4098,
+          "ci_hi": 0.564
+        },
+        "Prestige_High": {
+          "beta": 0.1126,
+          "se": 0.0692,
+          "p": 0.104,
+          "ci_lo": -0.0231,
+          "ci_hi": 0.2482
+        },
+        "ai_z": {
+          "beta": 0.2158,
+          "se": 0.0477,
+          "p": 0.0,
+          "ci_lo": 0.1223,
+          "ci_hi": 0.3093
+        },
+        "Prestige_High:ai_z": {
+          "beta": -0.0438,
+          "se": 0.0616,
+          "p": 0.4771,
+          "ci_lo": -0.1645,
+          "ci_hi": 0.0769
+        },
+        "log_age": {
+          "beta": 0.6973,
+          "se": 0.0896,
+          "p": 0.0,
+          "ci_lo": 0.5218,
+          "ci_hi": 0.8728
+        },
+        "log_abs_length": {
+          "beta": 1.8253,
+          "se": 1.6008,
+          "p": 0.2542,
+          "ci_lo": -1.3122,
+          "ci_hi": 4.9628
+        }
+      },
+      "r2": 0.3679,
+      "adj_r2": 0.3618,
+      "n": 843,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.113,
+      "se_prestige": 0.069,
+      "p_prestige": 0.104,
+      "beta_ai": 0.216,
+      "se_ai": 0.048,
+      "p_ai": 0.0,
+      "beta_interaction": -0.044,
+      "se_interaction": 0.062,
+      "p_interaction": 0.4771,
+      "ci_interaction_lo": -0.164,
+      "ci_interaction_hi": 0.077
+    },
+    "eq2_citations_binary": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -9.9388,
+          "se": 11.8855,
+          "p": 0.403,
+          "ci_lo": -33.234,
+          "ci_hi": 13.3563
+        },
+        "C(year)[T.2024]": {
+          "beta": -0.1782,
+          "se": 0.1387,
+          "p": 0.1987,
+          "ci_lo": -0.45,
+          "ci_hi": 0.0936
+        },
+        "C(year)[T.2025]": {
+          "beta": -1.0566,
+          "se": 0.1627,
+          "p": 0.0,
+          "ci_lo": -1.3755,
+          "ci_hi": -0.7376
+        },
+        "C(year)[T.2026]": {
+          "beta": -1.2508,
+          "se": 0.2512,
+          "p": 0.0,
+          "ci_lo": -1.743,
+          "ci_hi": -0.7585
+        },
+        "Prestige_High": {
+          "beta": 0.0462,
+          "se": 0.0647,
+          "p": 0.4749,
+          "ci_lo": -0.0805,
+          "ci_hi": 0.1729
+        },
+        "ai_z": {
+          "beta": 0.0587,
+          "se": 0.0435,
+          "p": 0.1775,
+          "ci_lo": -0.0266,
+          "ci_hi": 0.1439
+        },
+        "Prestige_High:ai_z": {
+          "beta": 0.0097,
+          "se": 0.0561,
+          "p": 0.8634,
+          "ci_lo": -0.1003,
+          "ci_hi": 0.1196
+        },
+        "log_age": {
+          "beta": 0.9001,
+          "se": 0.093,
+          "p": 0.0,
+          "ci_lo": 0.7178,
+          "ci_hi": 1.0825
+        },
+        "log_abs_length": {
+          "beta": 1.3953,
+          "se": 2.224,
+          "p": 0.5304,
+          "ci_lo": -2.9637,
+          "ci_hi": 5.7542
+        }
+      },
+      "r2": 0.6631,
+      "adj_r2": 0.6599,
+      "n": 843,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.046,
+      "se_prestige": 0.065,
+      "p_prestige": 0.4749,
+      "beta_ai": 0.059,
+      "se_ai": 0.043,
+      "p_ai": 0.1775,
+      "beta_interaction": 0.01,
+      "se_interaction": 0.056,
+      "p_interaction": 0.8634,
+      "ci_interaction_lo": -0.1,
+      "ci_interaction_hi": 0.12
+    },
+    "eq3_downloads_continuous": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -6.7288,
+          "se": 8.7139,
+          "p": 0.44,
+          "ci_lo": -23.8077,
+          "ci_hi": 10.3501
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4505,
+          "se": 0.118,
+          "p": 0.0001,
+          "ci_lo": 0.2191,
+          "ci_hi": 0.6818
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.3926,
+          "se": 0.1432,
+          "p": 0.0061,
+          "ci_lo": 0.1119,
+          "ci_hi": 0.6732
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.0861,
+          "se": 0.2484,
+          "p": 0.7287,
+          "ci_lo": -0.4006,
+          "ci_hi": 0.5729
+        },
+        "prestige_z": {
+          "beta": 0.0313,
+          "se": 0.0346,
+          "p": 0.3663,
+          "ci_lo": -0.0366,
+          "ci_hi": 0.0991
+        },
+        "ai_z": {
+          "beta": 0.1873,
+          "se": 0.0323,
+          "p": 0.0,
+          "ci_lo": 0.124,
+          "ci_hi": 0.2505
+        },
+        "prestige_z:ai_z": {
+          "beta": -0.0134,
+          "se": 0.0321,
+          "p": 0.6763,
+          "ci_lo": -0.0762,
+          "ci_hi": 0.0495
+        },
+        "log_age": {
+          "beta": 0.7019,
+          "se": 0.0896,
+          "p": 0.0,
+          "ci_lo": 0.5263,
+          "ci_hi": 0.8776
+        },
+        "log_abs_length": {
+          "beta": 1.8758,
+          "se": 1.6287,
+          "p": 0.2494,
+          "ci_lo": -1.3163,
+          "ci_hi": 5.0679
+        }
+      },
+      "r2": 0.3664,
+      "adj_r2": 0.3603,
+      "n": 843,
+      "focal_prestige": "prestige_z",
+      "focal_ai": "ai_z",
+      "focal_interaction": "prestige_z:ai_z",
+      "beta_prestige": 0.031,
+      "se_prestige": 0.035,
+      "p_prestige": 0.3663,
+      "beta_ai": 0.187,
+      "se_ai": 0.032,
+      "p_ai": 0.0,
+      "beta_interaction": -0.013,
+      "se_interaction": 0.032,
+      "p_interaction": 0.6763,
+      "ci_interaction_lo": -0.076,
+      "ci_interaction_hi": 0.049
+    },
+    "eq4_citations_continuous": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -9.9603,
+          "se": 11.9045,
+          "p": 0.4028,
+          "ci_lo": -33.2928,
+          "ci_hi": 13.3722
+        },
+        "C(year)[T.2024]": {
+          "beta": -0.1798,
+          "se": 0.1386,
+          "p": 0.1944,
+          "ci_lo": -0.4514,
+          "ci_hi": 0.0918
+        },
+        "C(year)[T.2025]": {
+          "beta": -1.0574,
+          "se": 0.1628,
+          "p": 0.0,
+          "ci_lo": -1.3765,
+          "ci_hi": -0.7382
+        },
+        "C(year)[T.2026]": {
+          "beta": -1.2497,
+          "se": 0.2514,
+          "p": 0.0,
+          "ci_lo": -1.7425,
+          "ci_hi": -0.757
+        },
+        "prestige_z": {
+          "beta": 0.016,
+          "se": 0.0309,
+          "p": 0.606,
+          "ci_lo": -0.0447,
+          "ci_hi": 0.0766
+        },
+        "ai_z": {
+          "beta": 0.0649,
+          "se": 0.0283,
+          "p": 0.022,
+          "ci_lo": 0.0094,
+          "ci_hi": 0.1205
+        },
+        "prestige_z:ai_z": {
+          "beta": 0.0016,
+          "se": 0.0279,
+          "p": 0.9545,
+          "ci_lo": -0.0531,
+          "ci_hi": 0.0563
+        },
+        "log_age": {
+          "beta": 0.9011,
+          "se": 0.0931,
+          "p": 0.0,
+          "ci_lo": 0.7186,
+          "ci_hi": 1.0836
+        },
+        "log_abs_length": {
+          "beta": 1.4041,
+          "se": 2.2277,
+          "p": 0.5285,
+          "ci_lo": -2.9621,
+          "ci_hi": 5.7703
+        }
+      },
+      "r2": 0.663,
+      "adj_r2": 0.6597,
+      "n": 843,
+      "focal_prestige": "prestige_z",
+      "focal_ai": "ai_z",
+      "focal_interaction": "prestige_z:ai_z",
+      "beta_prestige": 0.016,
+      "se_prestige": 0.031,
+      "p_prestige": 0.606,
+      "beta_ai": 0.065,
+      "se_ai": 0.028,
+      "p_ai": 0.022,
+      "beta_interaction": 0.002,
+      "se_interaction": 0.028,
+      "p_interaction": 0.9545,
+      "ci_interaction_lo": -0.053,
+      "ci_interaction_hi": 0.056
+    }
+  },
+  "B2_robustness": {
+    "spec1_baseline_downloads": {
+      "beta_prestige": 0.113,
+      "se_prestige": 0.069,
+      "p_prestige": 0.104,
+      "beta_ai": 0.216,
+      "se_ai": 0.048,
+      "p_ai": 0.0,
+      "beta_interaction": -0.044,
+      "se_interaction": 0.062,
+      "p_interaction": 0.4771,
+      "r2": 0.3679,
+      "n": 843
+    },
+    "spec2_binary_ai": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -7.2563,
+          "se": 8.4845,
+          "p": 0.3924,
+          "ci_lo": -23.8856,
+          "ci_hi": 9.3729
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4583,
+          "se": 0.1192,
+          "p": 0.0001,
+          "ci_lo": 0.2246,
+          "ci_hi": 0.6919
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.4,
+          "se": 0.1438,
+          "p": 0.0054,
+          "ci_lo": 0.1181,
+          "ci_hi": 0.6818
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.0959,
+          "se": 0.2505,
+          "p": 0.7018,
+          "ci_lo": -0.3951,
+          "ci_hi": 0.5869
+        },
+        "Prestige_High": {
+          "beta": 0.1585,
+          "se": 0.0887,
+          "p": 0.0738,
+          "ci_lo": -0.0152,
+          "ci_hi": 0.3323
+        },
+        "ai_binary": {
+          "beta": 0.3825,
+          "se": 0.1083,
+          "p": 0.0004,
+          "ci_lo": 0.1703,
+          "ci_hi": 0.5948
+        },
+        "Prestige_High:ai_binary": {
+          "beta": -0.1492,
+          "se": 0.139,
+          "p": 0.2831,
+          "ci_lo": -0.4216,
+          "ci_hi": 0.1232
+        },
+        "log_age": {
+          "beta": 0.6837,
+          "se": 0.0902,
+          "p": 0.0,
+          "ci_lo": 0.5069,
+          "ci_hi": 0.8605
+        },
+        "log_abs_length": {
+          "beta": 1.9567,
+          "se": 1.5856,
+          "p": 0.2172,
+          "ci_lo": -1.151,
+          "ci_hi": 5.0644
+        }
+      },
+      "r2": 0.3562,
+      "adj_r2": 0.35,
+      "n": 843,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_binary",
+      "focal_interaction": "Prestige_High:ai_binary",
+      "beta_prestige": 0.159,
+      "se_prestige": 0.089,
+      "p_prestige": 0.0738,
+      "beta_ai": 0.383,
+      "se_ai": 0.108,
+      "p_ai": 0.0004,
+      "beta_interaction": -0.149,
+      "se_interaction": 0.139,
+      "p_interaction": 0.2831,
+      "ci_interaction_lo": -0.422,
+      "ci_interaction_hi": 0.123
+    },
+    "spec3_excl_2026": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -6.4434,
+          "se": 10.9241,
+          "p": 0.5553,
+          "ci_lo": -27.8543,
+          "ci_hi": 14.9675
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4266,
+          "se": 0.1267,
+          "p": 0.0008,
+          "ci_lo": 0.1782,
+          "ci_hi": 0.6749
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.3197,
+          "se": 0.1847,
+          "p": 0.0835,
+          "ci_lo": -0.0423,
+          "ci_hi": 0.6816
+        },
+        "Prestige_High": {
+          "beta": 0.0975,
+          "se": 0.0726,
+          "p": 0.1793,
+          "ci_lo": -0.0448,
+          "ci_hi": 0.2398
+        },
+        "ai_z": {
+          "beta": 0.1743,
+          "se": 0.0526,
+          "p": 0.0009,
+          "ci_lo": 0.0713,
+          "ci_hi": 0.2774
+        },
+        "Prestige_High:ai_z": {
+          "beta": -0.0012,
+          "se": 0.0679,
+          "p": 0.9863,
+          "ci_lo": -0.1342,
+          "ci_hi": 0.1318
+        },
+        "log_age": {
+          "beta": 0.6332,
+          "se": 0.1334,
+          "p": 0.0,
+          "ci_lo": 0.3717,
+          "ci_hi": 0.8948
+        },
+        "log_abs_length": {
+          "beta": 1.898,
+          "se": 2.0398,
+          "p": 0.3521,
+          "ci_lo": -2.1,
+          "ci_hi": 5.896
+        }
+      },
+      "r2": 0.1366,
+      "adj_r2": 0.1271,
+      "n": 646,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.097,
+      "se_prestige": 0.073,
+      "p_prestige": 0.1793,
+      "beta_ai": 0.174,
+      "se_ai": 0.053,
+      "p_ai": 0.0009,
+      "beta_interaction": -0.001,
+      "se_interaction": 0.068,
+      "p_interaction": 0.9863,
+      "ci_interaction_lo": -0.134,
+      "ci_interaction_hi": 0.132
+    },
+    "spec4_trim_top5": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -5.8706,
+          "se": 8.1011,
+          "p": 0.4687,
+          "ci_lo": -21.7484,
+          "ci_hi": 10.0072
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4175,
+          "se": 0.0989,
+          "p": 0.0,
+          "ci_lo": 0.2237,
+          "ci_hi": 0.6114
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.4476,
+          "se": 0.1336,
+          "p": 0.0008,
+          "ci_lo": 0.1858,
+          "ci_hi": 0.7094
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.1881,
+          "se": 0.2381,
+          "p": 0.4295,
+          "ci_lo": -0.2786,
+          "ci_hi": 0.6549
+        },
+        "Prestige_High": {
+          "beta": 0.074,
+          "se": 0.0652,
+          "p": 0.2559,
+          "ci_lo": -0.0537,
+          "ci_hi": 0.2017
+        },
+        "ai_z": {
+          "beta": 0.2128,
+          "se": 0.0457,
+          "p": 0.0,
+          "ci_lo": 0.1232,
+          "ci_hi": 0.3024
+        },
+        "Prestige_High:ai_z": {
+          "beta": -0.0417,
+          "se": 0.0586,
+          "p": 0.4765,
+          "ci_lo": -0.1565,
+          "ci_hi": 0.0731
+        },
+        "log_age": {
+          "beta": 0.6729,
+          "se": 0.0867,
+          "p": 0.0,
+          "ci_lo": 0.503,
+          "ci_hi": 0.8428
+        },
+        "log_abs_length": {
+          "beta": 1.7095,
+          "se": 1.5143,
+          "p": 0.2589,
+          "ci_lo": -1.2585,
+          "ci_hi": 4.6776
+        }
+      },
+      "r2": 0.3724,
+      "adj_r2": 0.3661,
+      "n": 800,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.074,
+      "se_prestige": 0.065,
+      "p_prestige": 0.2559,
+      "beta_ai": 0.213,
+      "se_ai": 0.046,
+      "p_ai": 0.0,
+      "beta_interaction": -0.042,
+      "se_interaction": 0.059,
+      "p_interaction": 0.4765,
+      "ci_interaction_lo": -0.157,
+      "ci_interaction_hi": 0.073,
+      "download_cutoff": 10569.9
+    },
+    "spec5_citations_baseline": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -9.9388,
+          "se": 11.8855,
+          "p": 0.403,
+          "ci_lo": -33.234,
+          "ci_hi": 13.3563
+        },
+        "C(year)[T.2024]": {
+          "beta": -0.1782,
+          "se": 0.1387,
+          "p": 0.1987,
+          "ci_lo": -0.45,
+          "ci_hi": 0.0936
+        },
+        "C(year)[T.2025]": {
+          "beta": -1.0566,
+          "se": 0.1627,
+          "p": 0.0,
+          "ci_lo": -1.3755,
+          "ci_hi": -0.7376
+        },
+        "C(year)[T.2026]": {
+          "beta": -1.2508,
+          "se": 0.2512,
+          "p": 0.0,
+          "ci_lo": -1.743,
+          "ci_hi": -0.7585
+        },
+        "Prestige_High": {
+          "beta": 0.0462,
+          "se": 0.0647,
+          "p": 0.4749,
+          "ci_lo": -0.0805,
+          "ci_hi": 0.1729
+        },
+        "ai_z": {
+          "beta": 0.0587,
+          "se": 0.0435,
+          "p": 0.1775,
+          "ci_lo": -0.0266,
+          "ci_hi": 0.1439
+        },
+        "Prestige_High:ai_z": {
+          "beta": 0.0097,
+          "se": 0.0561,
+          "p": 0.8634,
+          "ci_lo": -0.1003,
+          "ci_hi": 0.1196
+        },
+        "log_age": {
+          "beta": 0.9001,
+          "se": 0.093,
+          "p": 0.0,
+          "ci_lo": 0.7178,
+          "ci_hi": 1.0825
+        },
+        "log_abs_length": {
+          "beta": 1.3953,
+          "se": 2.224,
+          "p": 0.5304,
+          "ci_lo": -2.9637,
+          "ci_hi": 5.7542
+        }
+      },
+      "r2": 0.6631,
+      "adj_r2": 0.6599,
+      "n": 843,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.046,
+      "se_prestige": 0.065,
+      "p_prestige": 0.4749,
+      "beta_ai": 0.059,
+      "se_ai": 0.043,
+      "p_ai": 0.1775,
+      "beta_interaction": 0.01,
+      "se_interaction": 0.056,
+      "p_interaction": 0.8634,
+      "ci_interaction_lo": -0.1,
+      "ci_interaction_hi": 0.12
+    },
+    "spec6_continuous_prestige": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -6.7288,
+          "se": 8.7139,
+          "p": 0.44,
+          "ci_lo": -23.8077,
+          "ci_hi": 10.3501
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4505,
+          "se": 0.118,
+          "p": 0.0001,
+          "ci_lo": 0.2191,
+          "ci_hi": 0.6818
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.3926,
+          "se": 0.1432,
+          "p": 0.0061,
+          "ci_lo": 0.1119,
+          "ci_hi": 0.6732
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.0861,
+          "se": 0.2484,
+          "p": 0.7287,
+          "ci_lo": -0.4006,
+          "ci_hi": 0.5729
+        },
+        "prestige_z": {
+          "beta": 0.0313,
+          "se": 0.0346,
+          "p": 0.3663,
+          "ci_lo": -0.0366,
+          "ci_hi": 0.0991
+        },
+        "ai_z": {
+          "beta": 0.1873,
+          "se": 0.0323,
+          "p": 0.0,
+          "ci_lo": 0.124,
+          "ci_hi": 0.2505
+        },
+        "prestige_z:ai_z": {
+          "beta": -0.0134,
+          "se": 0.0321,
+          "p": 0.6763,
+          "ci_lo": -0.0762,
+          "ci_hi": 0.0495
+        },
+        "log_age": {
+          "beta": 0.7019,
+          "se": 0.0896,
+          "p": 0.0,
+          "ci_lo": 0.5263,
+          "ci_hi": 0.8776
+        },
+        "log_abs_length": {
+          "beta": 1.8758,
+          "se": 1.6287,
+          "p": 0.2494,
+          "ci_lo": -1.3163,
+          "ci_hi": 5.0679
+        }
+      },
+      "r2": 0.3664,
+      "adj_r2": 0.3603,
+      "n": 843,
+      "focal_prestige": "prestige_z",
+      "focal_ai": "ai_z",
+      "focal_interaction": "prestige_z:ai_z",
+      "beta_prestige": 0.031,
+      "se_prestige": 0.035,
+      "p_prestige": 0.3663,
+      "beta_ai": 0.187,
+      "se_ai": 0.032,
+      "p_ai": 0.0,
+      "beta_interaction": -0.013,
+      "se_interaction": 0.032,
+      "p_interaction": 0.6763,
+      "ci_interaction_lo": -0.076,
+      "ci_interaction_hi": 0.049
+    }
+  },
+  "A3_first_author_prestige": {
+    "downloads": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -6.5471,
+          "se": 8.5538,
+          "p": 0.444,
+          "ci_lo": -23.3122,
+          "ci_hi": 10.2179
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4529,
+          "se": 0.118,
+          "p": 0.0001,
+          "ci_lo": 0.2217,
+          "ci_hi": 0.6842
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.3999,
+          "se": 0.1434,
+          "p": 0.0053,
+          "ci_lo": 0.1188,
+          "ci_hi": 0.681
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.0849,
+          "se": 0.2479,
+          "p": 0.7321,
+          "ci_lo": -0.4011,
+          "ci_hi": 0.5708
+        },
+        "Prestige_High_first": {
+          "beta": 0.1573,
+          "se": 0.0657,
+          "p": 0.0167,
+          "ci_lo": 0.0285,
+          "ci_hi": 0.2862
+        },
+        "ai_z": {
+          "beta": 0.2007,
+          "se": 0.0414,
+          "p": 0.0,
+          "ci_lo": 0.1196,
+          "ci_hi": 0.2818
+        },
+        "Prestige_High_first:ai_z": {
+          "beta": -0.0236,
+          "se": 0.0611,
+          "p": 0.6989,
+          "ci_lo": -0.1434,
+          "ci_hi": 0.0961
+        },
+        "log_age": {
+          "beta": 0.7007,
+          "se": 0.0897,
+          "p": 0.0,
+          "ci_lo": 0.5249,
+          "ci_hi": 0.8764
+        },
+        "log_abs_length": {
+          "beta": 1.827,
+          "se": 1.5984,
+          "p": 0.253,
+          "ci_lo": -1.3058,
+          "ci_hi": 4.9598
+        }
+      },
+      "r2": 0.37,
+      "adj_r2": 0.364,
+      "n": 843,
+      "focal_prestige": "Prestige_High_first",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High_first:ai_z",
+      "beta_prestige": 0.157,
+      "se_prestige": 0.066,
+      "p_prestige": 0.0167,
+      "beta_ai": 0.201,
+      "se_ai": 0.041,
+      "p_ai": 0.0,
+      "beta_interaction": -0.024,
+      "se_interaction": 0.061,
+      "p_interaction": 0.6989,
+      "ci_interaction_lo": -0.143,
+      "ci_interaction_hi": 0.096
+    },
+    "citations": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -10.1996,
+          "se": 11.9475,
+          "p": 0.3933,
+          "ci_lo": -33.6163,
+          "ci_hi": 13.2171
+        },
+        "C(year)[T.2024]": {
+          "beta": -0.1761,
+          "se": 0.1389,
+          "p": 0.2048,
+          "ci_lo": -0.4483,
+          "ci_hi": 0.0961
+        },
+        "C(year)[T.2025]": {
+          "beta": -1.0503,
+          "se": 0.1627,
+          "p": 0.0,
+          "ci_lo": -1.3692,
+          "ci_hi": -0.7314
+        },
+        "C(year)[T.2026]": {
+          "beta": -1.2387,
+          "se": 0.2509,
+          "p": 0.0,
+          "ci_lo": -1.7305,
+          "ci_hi": -0.7469
+        },
+        "Prestige_High_first": {
+          "beta": 0.0634,
+          "se": 0.0612,
+          "p": 0.3002,
+          "ci_lo": -0.0566,
+          "ci_hi": 0.1834
+        },
+        "ai_z": {
+          "beta": 0.0229,
+          "se": 0.0381,
+          "p": 0.5485,
+          "ci_lo": -0.0519,
+          "ci_hi": 0.0976
+        },
+        "Prestige_High_first:ai_z": {
+          "beta": 0.0858,
+          "se": 0.0544,
+          "p": 0.1148,
+          "ci_lo": -0.0208,
+          "ci_hi": 0.1924
+        },
+        "log_age": {
+          "beta": 0.9052,
+          "se": 0.0929,
+          "p": 0.0,
+          "ci_lo": 0.723,
+          "ci_hi": 1.0874
+        },
+        "log_abs_length": {
+          "beta": 1.4375,
+          "se": 2.2355,
+          "p": 0.5202,
+          "ci_lo": -2.9439,
+          "ci_hi": 5.8189
+        }
+      },
+      "r2": 0.6641,
+      "adj_r2": 0.6609,
+      "n": 843,
+      "focal_prestige": "Prestige_High_first",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High_first:ai_z",
+      "beta_prestige": 0.063,
+      "se_prestige": 0.061,
+      "p_prestige": 0.3002,
+      "beta_ai": 0.023,
+      "se_ai": 0.038,
+      "p_ai": 0.5485,
+      "beta_interaction": 0.086,
+      "se_interaction": 0.054,
+      "p_interaction": 0.1148,
+      "ci_interaction_lo": -0.021,
+      "ci_interaction_hi": 0.192
+    }
+  },
+  "B5_negative_binomial": {
+    "nb1_downloads": {
+      "beta_prestige": 0.158,
+      "se_prestige": 0.064,
+      "p_prestige": 0.0138,
+      "beta_ai": 0.146,
+      "se_ai": 0.057,
+      "p_ai": 0.0099,
+      "beta_interaction": -0.003,
+      "se_interaction": 0.069,
+      "p_interaction": 0.9681,
+      "irr_ai": 1.157,
+      "irr_prestige": 1.171,
+      "irr_interaction": 0.997,
+      "aic": 15074.66,
+      "n": 843
+    },
+    "nb2_citations": {
+      "beta_prestige": 0.076,
+      "se_prestige": 0.085,
+      "p_prestige": 0.3686,
+      "beta_ai": 0.107,
+      "se_ai": 0.072,
+      "p_ai": 0.1334,
+      "beta_interaction": -0.007,
+      "se_interaction": 0.088,
+      "p_interaction": 0.9363,
+      "irr_ai": 1.113,
+      "irr_prestige": 1.079,
+      "irr_interaction": 0.993,
+      "aic": 4977.31,
+      "n": 843
+    }
+  },
+  "B6_topic_FE": {
+    "topic_dummies_used": [
+      "T_ESG_Green",
+      "T_Governance",
+      "T_Innovation",
+      "T_Marketing",
+      "T_Other",
+      "T_SupplyChain"
+    ],
+    "downloads": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -7.8671,
+          "se": 8.0384,
+          "p": 0.3277,
+          "ci_lo": -23.6222,
+          "ci_hi": 7.888
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.4526,
+          "se": 0.117,
+          "p": 0.0001,
+          "ci_lo": 0.2232,
+          "ci_hi": 0.6819
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.3977,
+          "se": 0.143,
+          "p": 0.0054,
+          "ci_lo": 0.1174,
+          "ci_hi": 0.6781
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.0744,
+          "se": 0.2504,
+          "p": 0.7664,
+          "ci_lo": -0.4163,
+          "ci_hi": 0.5651
+        },
+        "T_ESG_Green[T.True]": {
+          "beta": -0.298,
+          "se": 0.2255,
+          "p": 0.1864,
+          "ci_lo": -0.7399,
+          "ci_hi": 0.144
+        },
+        "T_Governance[T.True]": {
+          "beta": -0.7303,
+          "se": 0.6035,
+          "p": 0.2263,
+          "ci_lo": -1.9132,
+          "ci_hi": 0.4526
+        },
+        "T_Innovation[T.True]": {
+          "beta": -0.2764,
+          "se": 0.2133,
+          "p": 0.1949,
+          "ci_lo": -0.6944,
+          "ci_hi": 0.1416
+        },
+        "T_Marketing[T.True]": {
+          "beta": 0.122,
+          "se": 0.3811,
+          "p": 0.7489,
+          "ci_lo": -0.625,
+          "ci_hi": 0.869
+        },
+        "T_Other[T.True]": {
+          "beta": -0.4671,
+          "se": 0.1571,
+          "p": 0.003,
+          "ci_lo": -0.775,
+          "ci_hi": -0.1591
+        },
+        "T_SupplyChain[T.True]": {
+          "beta": -0.6013,
+          "se": 0.3574,
+          "p": 0.0925,
+          "ci_lo": -1.3019,
+          "ci_hi": 0.0992
+        },
+        "Prestige_High": {
+          "beta": 0.1116,
+          "se": 0.0692,
+          "p": 0.1069,
+          "ci_lo": -0.0241,
+          "ci_hi": 0.2473
+        },
+        "ai_z": {
+          "beta": 0.2058,
+          "se": 0.0481,
+          "p": 0.0,
+          "ci_lo": 0.1115,
+          "ci_hi": 0.3
+        },
+        "Prestige_High:ai_z": {
+          "beta": -0.045,
+          "se": 0.0609,
+          "p": 0.4604,
+          "ci_lo": -0.1643,
+          "ci_hi": 0.0744
+        },
+        "log_age": {
+          "beta": 0.7019,
+          "se": 0.0901,
+          "p": 0.0,
+          "ci_lo": 0.5253,
+          "ci_hi": 0.8785
+        },
+        "log_abs_length": {
+          "beta": 2.0843,
+          "se": 1.5028,
+          "p": 0.1654,
+          "ci_lo": -0.861,
+          "ci_hi": 5.0296
+        }
+      },
+      "r2": 0.3813,
+      "adj_r2": 0.3709,
+      "n": 843,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.112,
+      "se_prestige": 0.069,
+      "p_prestige": 0.1069,
+      "beta_ai": 0.206,
+      "se_ai": 0.048,
+      "p_ai": 0.0,
+      "beta_interaction": -0.045,
+      "se_interaction": 0.061,
+      "p_interaction": 0.4604,
+      "ci_interaction_lo": -0.164,
+      "ci_interaction_hi": 0.074
+    },
+    "citations": {
+      "coefficients": {
+        "Intercept": {
+          "beta": -10.9811,
+          "se": 11.472,
+          "p": 0.3385,
+          "ci_lo": -33.4657,
+          "ci_hi": 11.5036
+        },
+        "C(year)[T.2024]": {
+          "beta": -0.1792,
+          "se": 0.1384,
+          "p": 0.1953,
+          "ci_lo": -0.4505,
+          "ci_hi": 0.092
+        },
+        "C(year)[T.2025]": {
+          "beta": -1.0513,
+          "se": 0.1628,
+          "p": 0.0,
+          "ci_lo": -1.3704,
+          "ci_hi": -0.7322
+        },
+        "C(year)[T.2026]": {
+          "beta": -1.2465,
+          "se": 0.2523,
+          "p": 0.0,
+          "ci_lo": -1.7411,
+          "ci_hi": -0.752
+        },
+        "T_ESG_Green[T.True]": {
+          "beta": -0.2945,
+          "se": 0.2233,
+          "p": 0.1871,
+          "ci_lo": -0.7321,
+          "ci_hi": 0.1431
+        },
+        "T_Governance[T.True]": {
+          "beta": -0.3663,
+          "se": 1.0245,
+          "p": 0.7207,
+          "ci_lo": -2.3742,
+          "ci_hi": 1.6417
+        },
+        "T_Innovation[T.True]": {
+          "beta": -0.2898,
+          "se": 0.1926,
+          "p": 0.1324,
+          "ci_lo": -0.6672,
+          "ci_hi": 0.0877
+        },
+        "T_Marketing[T.True]": {
+          "beta": 0.101,
+          "se": 0.5026,
+          "p": 0.8407,
+          "ci_lo": -0.8841,
+          "ci_hi": 1.0861
+        },
+        "T_Other[T.True]": {
+          "beta": -0.4664,
+          "se": 0.1344,
+          "p": 0.0005,
+          "ci_lo": -0.7298,
+          "ci_hi": -0.203
+        },
+        "T_SupplyChain[T.True]": {
+          "beta": -0.182,
+          "se": 0.2217,
+          "p": 0.4116,
+          "ci_lo": -0.6165,
+          "ci_hi": 0.2525
+        },
+        "Prestige_High": {
+          "beta": 0.0418,
+          "se": 0.0654,
+          "p": 0.5231,
+          "ci_lo": -0.0864,
+          "ci_hi": 0.1699
+        },
+        "ai_z": {
+          "beta": 0.0535,
+          "se": 0.0443,
+          "p": 0.2276,
+          "ci_lo": -0.0334,
+          "ci_hi": 0.1403
+        },
+        "Prestige_High:ai_z": {
+          "beta": 0.0034,
+          "se": 0.0572,
+          "p": 0.9519,
+          "ci_lo": -0.1086,
+          "ci_hi": 0.1155
+        },
+        "log_age": {
+          "beta": 0.9048,
+          "se": 0.0931,
+          "p": 0.0,
+          "ci_lo": 0.7223,
+          "ci_hi": 1.0874
+        },
+        "log_abs_length": {
+          "beta": 1.5926,
+          "se": 2.1469,
+          "p": 0.4582,
+          "ci_lo": -2.6152,
+          "ci_hi": 5.8004
+        }
+      },
+      "r2": 0.6678,
+      "adj_r2": 0.6622,
+      "n": 843,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.042,
+      "se_prestige": 0.065,
+      "p_prestige": 0.5231,
+      "beta_ai": 0.053,
+      "se_ai": 0.044,
+      "p_ai": 0.2276,
+      "beta_interaction": 0.003,
+      "se_interaction": 0.057,
+      "p_interaction": 0.9519,
+      "ci_interaction_lo": -0.109,
+      "ci_interaction_hi": 0.115
+    }
+  },
+  "B7_mktg_mgmt_subsample": {
+    "n": 239,
+    "pct_of_full": 28.4,
+    "top_journals": [
+      {
+        "journal": "科技管理研究",
+        "n": 30
+      },
+      {
+        "journal": "科研管理",
+        "n": 15
+      },
+      {
+        "journal": "经济管理",
+        "n": 15
+      },
+      {
+        "journal": "研究与发展管理",
+        "n": 14
+      },
+      {
+        "journal": "经济与管理研究",
+        "n": 13
+      },
+      {
+        "journal": "外国经济与管理",
+        "n": 13
+      },
+      {
+        "journal": "管理学报",
+        "n": 11
+      },
+      {
+        "journal": "华东经济管理",
+        "n": 10
+      },
+      {
+        "journal": "管理世界",
+        "n": 9
+      },
+      {
+        "journal": "管理评论",
+        "n": 9
+      },
+      {
+        "journal": "南开管理评论",
+        "n": 9
+      },
+      {
+        "journal": "商业经济与管理",
+        "n": 8
+      },
+      {
+        "journal": "商业研究",
+        "n": 8
+      },
+      {
+        "journal": "企业经济",
+        "n": 7
+      },
+      {
+        "journal": "科学管理研究",
+        "n": 6
+      },
+      {
+        "journal": "管理学刊",
+        "n": 5
+      },
+      {
+        "journal": "哈尔滨商业大学学报(社会科学版)",
+        "n": 5
+      },
+      {
+        "journal": "当代经济管理",
+        "n": 5
+      },
+      {
+        "journal": "管理现代化",
+        "n": 4
+      },
+      {
+        "journal": "科学学与科学技术管理",
+        "n": 4
+      },
+      {
+        "journal": "北京工商大学学报(社会科学版)",
+        "n": 4
+      },
+      {
+        "journal": "经济理论与经济管理",
+        "n": 3
+      },
+      {
+        "journal": "中国管理科学",
+        "n": 3
+      },
+      {
+        "journal": "证券市场导报",
+        "n": 3
+      },
+      {
+        "journal": "管理工程学报",
+        "n": 3
+      },
+      {
+        "journal": "中国行政管理",
+        "n": 3
+      },
+      {
+        "journal": "工程管理科技前沿",
+        "n": 3
+      },
+      {
+        "journal": "管理科学",
+        "n": 3
+      },
+      {
+        "journal": "信息资源管理学报",
+        "n": 2
+      },
+      {
+        "journal": "经济与管理",
+        "n": 2
+      }
+    ],
+    "downloads": {
+      "coefficients": {
+        "Intercept": {
+          "beta": 10.8461,
+          "se": 85.2589,
+          "p": 0.8988,
+          "ci_lo": -156.2582,
+          "ci_hi": 177.9504
+        },
+        "C(year)[T.2024]": {
+          "beta": 0.5823,
+          "se": 0.2417,
+          "p": 0.016,
+          "ci_lo": 0.1085,
+          "ci_hi": 1.0561
+        },
+        "C(year)[T.2025]": {
+          "beta": 0.4678,
+          "se": 0.2772,
+          "p": 0.0914,
+          "ci_lo": -0.0754,
+          "ci_hi": 1.0111
+        },
+        "C(year)[T.2026]": {
+          "beta": 0.1557,
+          "se": 0.4741,
+          "p": 0.7426,
+          "ci_lo": -0.7736,
+          "ci_hi": 1.0849
+        },
+        "Prestige_High": {
+          "beta": -0.0085,
+          "se": 0.1493,
+          "p": 0.9543,
+          "ci_lo": -0.3011,
+          "ci_hi": 0.284
+        },
+        "ai_z": {
+          "beta": 0.2541,
+          "se": 0.1162,
+          "p": 0.0287,
+          "ci_lo": 0.0264,
+          "ci_hi": 0.4818
+        },
+        "Prestige_High:ai_z": {
+          "beta": -0.2348,
+          "se": 0.145,
+          "p": 0.1055,
+          "ci_lo": -0.5191,
+          "ci_hi": 0.0495
+        },
+        "log_age": {
+          "beta": 0.8173,
+          "se": 0.189,
+          "p": 0.0,
+          "ci_lo": 0.4468,
+          "ci_hi": 1.1877
+        },
+        "log_abs_length": {
+          "beta": -1.5531,
+          "se": 16.032,
+          "p": 0.9228,
+          "ci_lo": -32.9753,
+          "ci_hi": 29.8692
+        }
+      },
+      "r2": 0.421,
+      "adj_r2": 0.4008,
+      "n": 239,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": -0.009,
+      "se_prestige": 0.149,
+      "p_prestige": 0.9543,
+      "beta_ai": 0.254,
+      "se_ai": 0.116,
+      "p_ai": 0.0287,
+      "beta_interaction": -0.235,
+      "se_interaction": 0.145,
+      "p_interaction": 0.1055,
+      "ci_interaction_lo": -0.519,
+      "ci_interaction_hi": 0.049
+    },
+    "citations": {
+      "coefficients": {
+        "Intercept": {
+          "beta": 47.5778,
+          "se": 73.75,
+          "p": 0.5188,
+          "ci_lo": -96.9697,
+          "ci_hi": 192.1252
+        },
+        "C(year)[T.2024]": {
+          "beta": -0.039,
+          "se": 0.2634,
+          "p": 0.8823,
+          "ci_lo": -0.5552,
+          "ci_hi": 0.4772
+        },
+        "C(year)[T.2025]": {
+          "beta": -1.342,
+          "se": 0.2695,
+          "p": 0.0,
+          "ci_lo": -1.8702,
+          "ci_hi": -0.8138
+        },
+        "C(year)[T.2026]": {
+          "beta": -1.7212,
+          "se": 0.4268,
+          "p": 0.0001,
+          "ci_lo": -2.5577,
+          "ci_hi": -0.8848
+        },
+        "Prestige_High": {
+          "beta": 0.0385,
+          "se": 0.1165,
+          "p": 0.741,
+          "ci_lo": -0.1898,
+          "ci_hi": 0.2668
+        },
+        "ai_z": {
+          "beta": -0.0456,
+          "se": 0.0935,
+          "p": 0.6254,
+          "ci_lo": -0.2288,
+          "ci_hi": 0.1376
+        },
+        "Prestige_High:ai_z": {
+          "beta": 0.0653,
+          "se": 0.1127,
+          "p": 0.5626,
+          "ci_lo": -0.1556,
+          "ci_hi": 0.2861
+        },
+        "log_age": {
+          "beta": 0.6947,
+          "se": 0.1611,
+          "p": 0.0,
+          "ci_lo": 0.379,
+          "ci_hi": 1.0105
+        },
+        "log_abs_length": {
+          "beta": -9.16,
+          "se": 13.872,
+          "p": 0.509,
+          "ci_lo": -36.3487,
+          "ci_hi": 18.0286
+        }
+      },
+      "r2": 0.7019,
+      "adj_r2": 0.6915,
+      "n": 239,
+      "focal_prestige": "Prestige_High",
+      "focal_ai": "ai_z",
+      "focal_interaction": "Prestige_High:ai_z",
+      "beta_prestige": 0.038,
+      "se_prestige": 0.116,
+      "p_prestige": 0.741,
+      "beta_ai": -0.046,
+      "se_ai": 0.093,
+      "p_ai": 0.6254,
+      "beta_interaction": 0.065,
+      "se_interaction": 0.113,
+      "p_interaction": 0.5626,
+      "ci_interaction_lo": -0.156,
+      "ci_interaction_hi": 0.286
+    }
+  },
+  "pct_high_by_year": {
+    "2023": 0.69,
+    "2024": 0.6821,
+    "2025": 0.6633,
+    "2026": 0.6548
+  }
+}

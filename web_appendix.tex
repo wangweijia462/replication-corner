@@ -1,0 +1,727 @@
+%% Web Appendix
+%% "Does AI Reduce the Reputation Premium in Knowledge Diffusion?
+%%  A Conceptual Replication Using Chinese Journal Articles"
+%% Marketing Letters -- Replication Corner
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=2.54cm,bottom=2.54cm,left=2.54cm,right=2.54cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[authoryear,sort]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{caption}
+\captionsetup{labelfont=bf,font=small}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+
+\onehalfspacing
+
+\title{\textbf{Web Appendix}\\[0.4em]
+\normalsize Does AI Reduce the Reputation Premium in Knowledge Diffusion?\\
+A Conceptual Replication Using Chinese Journal Articles\\[0.4em]
+\textit{Marketing Letters} --- Replication Corner}
+\author{[Blinded for review]}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+%% ============================================================
+\section*{Appendix A: Data Construction and Variable Coding}
+\addcontentsline{toc}{section}{Appendix A: Data Construction and Variable Coding}
+%% ============================================================
+
+\subsection*{A1. Sample Construction}
+\addcontentsline{toc}{subsection}{A1. Sample Construction}
+
+\subsubsection*{CNKI Search Procedure}
+
+We searched CNKI (China National Knowledge Infrastructure,
+\url{https://www.cnki.net}) in June 2026 for Chinese-language journal
+articles using the advanced search interface.
+The search covered journals classified in CNKI's economics, management,
+and business administration categories.
+Keywords applied (in separate searches combined by OR logic):
+人工智能 (AI), 生成式AI (generative AI), 大语言模型 (LLM), 数字化转型
+(digital transformation), 公司治理 (corporate governance),
+供应链管理 (supply chain management), ESG, 绿色发展 (green development),
+营销 (marketing), 技术创新 (technological innovation),
+企业管理 (enterprise management), 数字经济 (digital economy).
+Publication date range: 2023-01-01 to 2026-06-05 (data collection date).
+Document types: journal articles only (editorials, book reviews,
+conference proceedings excluded).
+
+\subsubsection*{Sample Flow}
+
+\begin{table}[htbp]
+\centering
+\caption{Sample Attrition Flow}
+\label{tab:flow}
+\begin{tabular}{lrr}
+\toprule
+Step & $N$ & Reason for exclusion \\
+\midrule
+Initial CNKI records retrieved & 856 & \\
+Records outside 2023--2026 window & $-$5 & Publication date outside scope \\
+Records with missing or partial abstracts & $-$6 & $<$20 characters in abstract field \\
+Records lacking formal publication ID & $-$2 & Online-first without issue/page data \\
+\midrule
+\textbf{Final analytic sample} & \textbf{843} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection*{Year and Topic Distribution}
+
+Table~\ref{tab:yeardist} shows the analytic sample by publication year.
+The 2025--2026 concentration reflects both the focus on recent AI-era
+publications and the exponential growth of CNKI-indexed articles in
+this period.
+
+\begin{table}[htbp]
+\centering
+\caption{Analytic Sample by Publication Year}
+\label{tab:yeardist}
+\begin{tabular}{lrrr}
+\toprule
+Year & $N$ & \% & Cumulative \% \\
+\midrule
+2023 & 100 & 11.9 & 11.9 \\
+2024 & 151 & 17.9 & 29.8 \\
+2025 & 395 & 46.9 & 76.6 \\
+2026 & 197 & 23.4 & 100.0 \\
+\midrule
+Total & 843 & 100.0 & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The keyword strategy was designed to retrieve articles relevant to
+business and management knowledge diffusion; 88\% of articles were
+classified as AI/digital transformation-related (see topic
+classification in Appendix~A4).
+A marketing and management sub-sample robustness check is reported
+in Appendix~B7.
+
+%% ============================================================
+\subsection*{A2. AI-Style Score: Construction and Validation}
+\addcontentsline{toc}{subsection}{A2. AI-Style Score}
+%% ============================================================
+
+\subsubsection*{Dictionary Construction}
+
+Two bilingual coders (Chinese-English) independently reviewed a
+development sample of 120 abstracts from 2023--2024, half of which
+were identified as likely AI-assisted (based on a preliminary scan
+for formulaic structural features) and half not.
+Using the AI writing-style taxonomy of Liang et al.\ (2024, \textit{NEJM AI})
+as a starting framework, coders independently proposed candidate markers
+characteristic of AI-assisted academic writing in Chinese social science.
+Candidate markers were operationalized as exact-string matches on the
+abstract text.
+After resolving discrepancies by discussion, a final dictionary of
+23 markers was agreed upon.
+Inter-coder agreement on the development sample was $\kappa = 0.79$,
+exceeding the conventional 0.70 acceptability threshold.
+
+\subsubsection*{Scoring Procedure}
+
+For each target abstract, we assessed the binary presence (1/0) of
+each of the 23 markers via exact string matching.
+The \textit{ai\_style\_score} equals the proportion of markers matched:
+\[
+  \textit{ai\_style\_score}_i
+    = \frac{1}{23}\sum_{j=1}^{23} \mathbf{1}[\text{marker}_j \in \text{abstract}_i]
+  \in [0,1].
+\]
+This fully deterministic scoring procedure requires no external API
+and is entirely reproducible from the published marker list.
+
+\subsubsection*{Limitations of the Measure}
+
+CNKI truncates the displayed abstract field at approximately 203 characters,
+which means abstracts are right-truncated: phrases that would appear in
+longer sections of an abstract are systematically missing.
+This truncation likely suppresses scores for markers that appear in
+later structural sections (e.g., practical implications) more than for
+markers that appear early (e.g., ``results show'').
+As Table~\ref{tab:markers} shows, several markers (理论贡献,
+实践启示, 数据表明, 研究发现如下, 系统性地) have zero frequency in
+the analytic sample, plausibly reflecting truncation rather than
+genuine absence.
+Future work should validate the score against full-text abstracts or
+alternative AI-detection approaches.
+
+\subsubsection*{Full Marker List with Frequencies}
+
+\begin{table}[htbp]
+\centering
+\caption{AI Writing-Style Marker Dictionary: Chinese Markers,
+         English Translations, and Frequency in Analytic Sample
+         ($N = 843$)}
+\label{tab:markers}
+\begin{threeparttable}
+\small
+\begin{tabular}{llrr}
+\toprule
+\# & Chinese marker & English translation & $n$ (\%) \\
+\midrule
+1  & 研究发现  & results/findings indicate & 338 (40.1) \\
+2  & 结果表明  & results show              & 108 (12.8) \\
+3  & 异质性分析 & heterogeneity analysis   &  80 (9.5)  \\
+4  & 稳健性检验 & robustness checks        &  77 (9.1)  \\
+5  & 机制分析  & mechanism analysis        &  72 (8.5)  \\
+6  & 研究表明  & research shows            &  42 (5.0)  \\
+7  & 面板数据  & panel data                &  38 (4.5)  \\
+8  & 双重差分  & difference-in-differences &  36 (4.3)  \\
+9  & 本研究    & this study                &  35 (4.2)  \\
+10 & 固定效应  & fixed effects             &  27 (3.2)  \\
+11 & 实证研究  & empirical study           &  22 (2.6)  \\
+12 & 中介效应  & mediation effect          &  16 (1.9)  \\
+13 & 调节效应  & moderation effect         &  16 (1.9)  \\
+14 & 进一步分析 & further analysis         &  16 (1.9)  \\
+15 & 创新性地  & innovatively              &   5 (0.6)  \\
+16 & 验证了    & validates / confirms      &   5 (0.6)  \\
+17 & 研究结论  & research conclusions      &   7 (0.8)  \\
+18 & 基准回归  & baseline regression       &   6 (0.7)  \\
+19 & 理论贡献  & theoretical contribution  &   0 (0.0)  \\
+20 & 实践启示  & practical implications    &   0 (0.0)  \\
+21 & 数据表明  & data show                 &   0 (0.0)  \\
+22 & 研究发现如下 & findings are as follows &  0 (0.0)  \\
+23 & 系统性地  & systematically            &   0 (0.0)  \\
+\midrule
+\multicolumn{2}{l}{\textit{Total marker occurrences}} & 931 & --- \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} Frequencies reflect binary presence in each abstract;
+  multiple matches within one abstract count as one.
+  Nine markers with zero or near-zero frequency likely reflect CNKI
+  abstract truncation at $\approx$203 characters rather than genuine
+  absence of these patterns from AI-assisted writing.
+  All matching is exact string search; no stemming or paraphrase matching.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsubsection*{AI-Style Score Distribution and Temporal Trend}
+
+The score is right-skewed: 40.6\% of articles score exactly zero
+(no markers present), while the maximum is 0.261
+(6 of 23 markers). The mean is 0.049 (SD\,=\,0.050, median\,=\,0.044).
+
+Table~\ref{tab:aitrend} shows mean AI-style scores by publication year.
+The increasing trend from 2023 to 2026 is consistent with the
+accelerating adoption of LLM-assisted writing following the release
+of ChatGPT in late 2022.
+
+\begin{table}[htbp]
+\centering
+\caption{Mean AI-Style Score by Publication Year}
+\label{tab:aitrend}
+\begin{tabular}{lrrr}
+\toprule
+Year & Mean & Median & SD \\
+\midrule
+2023 & 0.031 & 0.022 & 0.041 \\
+2024 & 0.041 & 0.044 & 0.047 \\
+2025 & 0.050 & 0.044 & 0.049 \\
+2026 & 0.062 & 0.044 & 0.056 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% ============================================================
+\subsection*{A3. Institutional Prestige Coding and First-Author Sensitivity}
+\addcontentsline{toc}{subsection}{A3. Prestige Coding and Sensitivity}
+%% ============================================================
+
+\subsubsection*{Prestige Classification}
+
+Table~\ref{tab:prestgedist} shows the prestige tier distribution.
+
+\begin{table}[htbp]
+\centering
+\caption{Institutional Prestige Tier Distribution ($N = 843$)}
+\label{tab:prestgedist}
+\begin{tabular}{llrr}
+\toprule
+Tier & Classification & $N$ & \% \\
+\midrule
+1 & No nationally ranked institution & 280 & 33.2 \\
+2 & 211 Project / Double First-Class & 191 & 22.7 \\
+3 & 985 Project institution          & 246 & 29.2 \\
+4 & C9 elite university              & 126 & 14.9 \\
+\midrule
+\multicolumn{2}{l}{Prestige\_High ($\geq 2$)} & 563 & 66.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The maximum-tier rule assigns each article the highest prestige tier
+across all affiliated co-authors.
+Accordingly, 51.7\% of articles have a high-prestige \textit{first} author
+(versus 66.8\% when using maximum tier), reflecting that some articles
+gain high-prestige classification only through non-first-author affiliations.
+
+\subsubsection*{First-Author Prestige Sensitivity}
+
+Table~\ref{tab:firstauthor} replicates the main OLS specifications
+using first-author institutional prestige rather than maximum-tier
+prestige.
+Notably, with first-author coding the prestige main effect
+on downloads reaches conventional significance
+($\hat\beta = 0.157$, $p = .017$), suggesting that the maximum-tier
+rule attenuates the prestige effect by assigning high-prestige status
+to articles whose first author is not from an elite institution.
+Importantly, the Prestige\,$\times$\,AI-style interaction remains
+non-significant in both specifications
+($\hat\beta_3 = -0.024$, $p = .699$ for downloads;
+$\hat\beta_3 = +0.086$, $p = .115$ for citations),
+consistent with the null interaction finding in the main text.
+These results confirm that the null interaction is robust to the
+choice of prestige aggregation rule, even when the prestige main
+effect itself is significant under first-author coding.
+
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity Analysis: First-Author Institutional Prestige
+         ($N = 843$, OLS, HC3 Robust SEs)}
+\label{tab:firstauthor}
+\begin{threeparttable}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) Downloads & (2) Citations \\
+\midrule
+Prestige\_High\_first
+  & $0.157^{*}$ & $0.063$ \\
+  & (0.065)     & (0.061) \\[4pt]
+ai\_z
+  & $0.215^{***}$ & $0.060$ \\
+  & (0.047)       & (0.043) \\[4pt]
+\textbf{Prestige\_first\,$\times$\,ai\_z}
+  & $\mathbf{-0.024}$ & $\mathbf{+0.086}$ \\
+  & \textbf{(0.062)}  & \textbf{(0.054)}  \\[4pt]
+\midrule
+Controls, Year FEs & Yes & Yes \\
+$R^2$              & .370 & .666 \\
+$N$                & 843  & 843  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} Prestige\_High\_first\,=\,1 if the first-listed author is
+  affiliated with a 985/C9/211/DFC-ranked institution (51.7\% of sample).
+  Controls include $\log(\text{Age})$, $\log(\text{Abs.\ length})$,
+  and year fixed effects.
+  $^{*}p<.05$;\ $^{***}p<.001$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+%% ============================================================
+\subsection*{A4. Variable Dictionary and Additional Descriptives}
+\addcontentsline{toc}{subsection}{A4. Variable Dictionary}
+%% ============================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Variable Definitions and Summary Statistics ($N = 843$)}
+\label{tab:vardict}
+\begin{threeparttable}
+\small
+\begin{tabular}{lp{5.5cm}rr}
+\toprule
+Variable & Definition & Mean & SD \\
+\midrule
+$\log(\text{Downloads}+1)$ & Log of CNKI download count plus one & 7.52 & 1.19 \\
+$\log(\text{Citations}+1)$ & Log of CNKI citation count plus one & 1.81 & 1.52 \\
+Prestige\_High & 1 if max tier $\geq 2$ (985/C9/211/DFC) & 0.668 & 0.471 \\
+prestige\_score\_z & Standardized four-tier prestige score & 0.000 & 1.000 \\
+ai\_score & Proportion of 23 AI markers present & 0.049 & 0.050 \\
+ai\_z & Standardized ai\_score & 0.000 & 1.000 \\
+$\log(\text{Age})$ & Log of days from publication to 2026-06-05 & 5.69 & 0.94 \\
+$\log(\text{Abs.\ length})$ & Log of abstract character count & 5.32 & 0.033 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} The small SD for $\log(\text{Abs.\ length})$ reflects
+  CNKI truncation at $\approx$203 characters; see main text and
+  Table~\ref{tab:descriptives} in the manuscript.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\newpage
+%% ============================================================
+\section*{Appendix B: Additional Analyses}
+\addcontentsline{toc}{section}{Appendix B: Additional Analyses}
+%% ============================================================
+
+\subsection*{B1. Full Main Regression Tables}
+\addcontentsline{toc}{subsection}{B1. Full Main Regression Tables}
+
+Tables~\ref{tab:b1_downloads} and~\ref{tab:b1_citations} reproduce
+the main regression results with all coefficients including intercept,
+year fixed effects, and control variables.
+
+\begin{table}[htbp]
+\centering
+\caption{Full Regression Output: Download Outcome ($N = 843$)}
+\label{tab:b1_downloads}
+\begin{threeparttable}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) Binary prestige & (3) Continuous prestige \\
+\midrule
+Intercept
+  & $-6.506$ & $-6.623$ \\
+  & (8.564)  & (8.599)  \\[3pt]
+Prestige\_High
+  & $0.113$ & \\
+  & (0.069) & \\[3pt]
+prestige\_score\_z
+  & & $0.031$ \\
+  & & (0.035) \\[3pt]
+ai\_z
+  & $0.216^{***}$ & $0.187^{***}$ \\
+  & (0.048)       & (0.032)       \\[3pt]
+\textbf{Prestige\,$\times$\,ai\_z}
+  & $\mathbf{-0.044}$ & $\mathbf{-0.013}$ \\
+  & \textbf{(0.062)}  & \textbf{(0.032)}  \\[3pt]
+$\log(\text{Age})$
+  & $0.697^{***}$ & $0.702^{***}$ \\
+  & (0.090)       & (0.090)       \\[3pt]
+$\log(\text{Abs.\ length})$
+  & $1.825$ & $1.876$ \\
+  & (1.601) & (1.629) \\[3pt]
+Year = 2024
+  & $0.452^{***}$ & $0.449^{***}$ \\
+  & (0.118)       & (0.118)       \\[3pt]
+Year = 2025
+  & $0.391^{**}$ & $0.384^{**}$ \\
+  & (0.143)      & (0.143)      \\[3pt]
+Year = 2026
+  & $0.077$ & $0.069$ \\
+  & (0.248) & (0.249) \\[3pt]
+\midrule
+$R^2$       & .368 & .366 \\
+Adj.\ $R^2$ & .362 & .360 \\
+$N$         & 843  & 843  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} OLS with HC3 heteroskedasticity-robust SEs in parentheses.
+  $^{**}p<.01$;\ $^{***}p<.001$.
+  Baseline year = 2023.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Full Regression Output: Citation Outcome ($N = 843$)}
+\label{tab:b1_citations}
+\begin{threeparttable}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (2) Binary prestige & (4) Continuous prestige \\
+\midrule
+Intercept
+  & $-9.939$ & $-9.906$ \\
+  & (11.886) & (11.917) \\[3pt]
+Prestige\_High
+  & $0.046$ & \\
+  & (0.065) & \\[3pt]
+prestige\_score\_z
+  & & $0.016$ \\
+  & & (0.031) \\[3pt]
+ai\_z
+  & $0.059$ & $0.065^{*}$ \\
+  & (0.044) & (0.028)    \\[3pt]
+\textbf{Prestige\,$\times$\,ai\_z}
+  & $\mathbf{+0.010}$ & $\mathbf{+0.002}$ \\
+  & \textbf{(0.056)}  & \textbf{(0.028)}  \\[3pt]
+$\log(\text{Age})$
+  & $0.900^{***}$ & $0.901^{***}$ \\
+  & (0.093)       & (0.093)       \\[3pt]
+$\log(\text{Abs.\ length})$
+  & $1.395$ & $1.404$ \\
+  & (2.224) & (2.228) \\[3pt]
+Year = 2024
+  & $-0.178$ & $-0.177$ \\
+  & (0.139)  & (0.139)  \\[3pt]
+Year = 2025
+  & $-1.057^{***}$ & $-1.054^{***}$ \\
+  & (0.163)        & (0.163)        \\[3pt]
+Year = 2026
+  & $-1.251^{***}$ & $-1.249^{***}$ \\
+  & (0.251)        & (0.251)        \\[3pt]
+\midrule
+$R^2$       & .663 & .663 \\
+Adj.\ $R^2$ & .660 & .660 \\
+$N$         & 843  & 843  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} OLS with HC3 SEs. The large negative year fixed effects
+  for 2025--2026 reflect citation left-censoring: recently published
+  articles have had little time to accumulate citations.
+  $^{*}p<.05$;\ $^{***}p<.001$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+%% ============================================================
+\subsection*{B2. Full Robustness Regression Tables}
+\addcontentsline{toc}{subsection}{B2. Full Robustness Regression Tables}
+
+Table~\ref{tab:b2_robust} provides key coefficients for all six
+robustness specifications reported in Table~3 of the main text.
+All six specifications include $\log(\text{Age})$,
+$\log(\text{Abs.\ length})$, and year fixed effects.
+
+\begin{table}[htbp]
+\centering
+\caption{Robustness Checks: Full Key Coefficients}
+\label{tab:b2_robust}
+\begin{threeparttable}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lp{3.5cm}cccc}
+\toprule
+Spec. & Description & Prestige & AI-Style & \textbf{Prestige\,$\times$\,AI} & $R^2$ \\
+\midrule
+1 & Baseline: binary prestige, downloads ($n=843$)
+  & $0.113$ & $0.216^{***}$ & $\mathbf{-0.044}$ & .368 \\
+  & & (0.069) & (0.048) & (0.062) & \\[3pt]
+2 & Binary AI median-split, downloads ($n=843$)
+  & $0.159^{\dagger}$ & $0.383^{***}$ & $\mathbf{-0.149}$ & .356 \\
+  & & (0.089) & (0.108) & (0.139) & \\[3pt]
+3 & Exclude 2026, downloads ($n=646$)
+  & $0.097$ & $0.174^{***}$ & $\mathbf{-0.001}$ & .137 \\
+  & & (0.073) & (0.053) & (0.068) & \\[3pt]
+4 & Trim top 5\% downloads, downloads ($n=800$)
+  & $0.074$ & $0.213^{***}$ & $\mathbf{-0.042}$ & .372 \\
+  & & (0.065) & (0.046) & (0.059) & \\[3pt]
+5 & Baseline: binary prestige, citations ($n=843$)
+  & $0.046$ & $0.059$ & $\mathbf{+0.010}$ & .663 \\
+  & & (0.065) & (0.044) & (0.056) & \\[3pt]
+6 & Continuous prestige score, downloads ($n=843$)
+  & $0.031$ & $0.187^{***}$ & $\mathbf{-0.013}$ & .366 \\
+  & & (0.035) & (0.032) & (0.032) & \\[3pt]
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} OLS with HC3 robust SEs in parentheses.
+  The Prestige\,$\times$\,AI interaction (bold) is not significant
+  in any specification.
+  $^{\dagger}p<.10$;\ $^{***}p<.001$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+%% ============================================================
+\subsection*{B5. Negative-Binomial Models on Raw Counts}
+\addcontentsline{toc}{subsection}{B5. Negative-Binomial Models}
+
+Table~\ref{tab:nb} presents negative-binomial regressions on raw
+download and citation counts as an alternative to the log(+1)-OLS
+specification in the main analysis.
+Negative-binomial regression is appropriate for count outcomes with
+overdispersion.
+Coefficients are log-incidence-rate ratios (IRR on the exponentiated
+scale in parentheses).
+
+\begin{table}[htbp]
+\centering
+\caption{Negative-Binomial Models on Raw Counts ($N = 843$)}
+\label{tab:nb}
+\begin{threeparttable}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) Downloads & (2) Citations \\
+\midrule
+Prestige\_High
+  & $0.158^{*}$   & $0.076$ \\
+  & (IRR\,=\,1.171) & (IRR\,=\,1.079) \\[3pt]
+ai\_z
+  & $0.146^{**}$   & $0.107$ \\
+  & (IRR\,=\,1.157) & (IRR\,=\,1.113) \\[3pt]
+\textbf{Prestige\,$\times$\,ai\_z}
+  & $\mathbf{-0.003}$ & $\mathbf{-0.007}$ \\
+  & (IRR\,=\,\textbf{0.997}) & (IRR\,=\,\textbf{0.993}) \\[3pt]
+\midrule
+Controls, Year FEs & Yes & Yes \\
+AIC & --- & --- \\
+$N$  & 843 & 843 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} Coefficients are log-incidence-rate ratios;
+  exponentiated IRRs in parentheses.
+  Controls: $\log(\text{Age})$, $\log(\text{Abs.\ length})$, year FEs.
+  The NB specification shows a significant prestige main effect for
+  downloads ($p = .014$) that is not observed in the OLS log(+1)
+  specification ($p = .104$), suggesting the prestige effect may be
+  non-linear in download scale.
+  Crucially, the Prestige\,$\times$\,AI interaction is near zero and
+  non-significant in both NB models, consistent with the main OLS results.
+  $^{*}p<.05$;\ $^{**}p<.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+%% ============================================================
+\subsection*{B6. Topic Fixed-Effect Sensitivity}
+\addcontentsline{toc}{subsection}{B6. Topic Fixed-Effect Sensitivity}
+
+To assess whether the main results are driven by topic-level
+heterogeneity, we add binary topic dummies to the main specification.
+Topics were assigned using keyword matching on title, abstract, and
+keywords: AI/Digital (88.4\%), Supply Chain (2.5\%),
+ESG/Green (1.8\%), Marketing (0.8\%), Innovation (3.1\%),
+Governance (0.2\%), Other (3.2\%).
+Because 88\% of articles fall in a single category (AI/Digital),
+the topic dummies explain little additional variance.
+Results are nearly identical to the baseline:
+$\hat\beta_3 = -0.045$ ($p = .460$) for downloads and
+$\hat\beta_3 = +0.003$ ($p = .952$) for citations,
+with prestige remaining non-significant ($p = .107$ and $p = .523$).
+The focal results are not driven by topic composition.
+
+%% ============================================================
+\subsection*{B7. Marketing and Management Sub-Sample}
+\addcontentsline{toc}{subsection}{B7. Marketing and Management Sub-Sample}
+
+To address concerns about sample breadth, we restrict the analysis
+to articles from CNKI journals whose names contain at least one of
+the following management-related terms:
+管理 (management), 营销 (marketing), 市场 (market/marketing),
+商学 (business), 工商 (business administration),
+经济管理 (economic management), 商业 (business),
+战略 (strategy), 组织 (organization), 企业 (enterprise/firm).
+This yields a sub-sample of $n = 239$ articles (28.4\% of the full sample)
+from journals including 管理世界, 南开管理评论, 管理学报,
+科研管理, 经济管理, 外国经济与管理, and others.
+
+\begin{table}[htbp]
+\centering
+\caption{Marketing/Management Sub-Sample ($n = 239$, OLS, HC3 SEs)}
+\label{tab:mktgmgmt}
+\begin{threeparttable}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) Downloads & (2) Citations \\
+\midrule
+Prestige\_High
+  & $-0.009$ & $0.038$ \\
+  & (0.152)  & (0.116) \\[4pt]
+ai\_z
+  & $0.254^{*}$ & $-0.046$ \\
+  & (0.117)     & (0.076) \\[4pt]
+\textbf{Prestige\,$\times$\,ai\_z}
+  & $\mathbf{-0.235}$ & $\mathbf{+0.065}$ \\
+  & \textbf{(0.145)}  & \textbf{(0.112)}  \\[4pt]
+\midrule
+Controls, Year FEs & Yes & Yes \\
+$R^2$  & .421 & .702 \\
+$N$    & 239  & 239  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} OLS with HC3 robust SEs.
+  The AI-style main effect on downloads is positive and significant
+  ($\hat\beta = 0.254$, $p = .029$), replicating the main finding
+  of the full sample.
+  The Prestige\,$\times$\,AI interaction is larger in magnitude
+  ($\hat\beta_3 = -0.235$) than in the full sample ($-0.044$)
+  but remains non-significant ($p = .106$), consistent with
+  low statistical power at $n = 239$.
+  The prestige main effect is not significant in either outcome.
+  $^{*}p<.05$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+%% ============================================================
+\section*{Appendix C: Comparison with Jo and Li (2026)}
+\addcontentsline{toc}{section}{Appendix C: Comparison with Jo and Li (2026)}
+%% ============================================================
+
+Table~\ref{tab:compare} places the present study's focal estimates
+alongside the corresponding estimates from Jo and Li (2026) for
+direct comparison.
+The two studies differ in data source (SSRN preprints vs.\ CNKI
+peer-reviewed articles), language (English vs.\ Chinese),
+AI-style measurement (LLM-based evaluation vs.\ dictionary marker count),
+prestige measurement (QS rankings vs.\ C9/985/211 tier), and
+outcome metrics (SSRN abstract views vs.\ CNKI downloads/citations).
+These design differences preclude direct statistical comparison of
+point estimates; the table is intended to summarize the direction and
+rough magnitude of replicated and non-replicated effects.
+
+\begin{table}[htbp]
+\centering
+\caption{Side-by-Side Comparison with Jo and Li (2026)}
+\label{tab:compare}
+\begin{threeparttable}
+\small
+\begin{tabular}{p{4.5cm}cc}
+\toprule
+& Jo \& Li (2026) & Present study \\
+& SSRN, English & CNKI, Chinese \\
+\midrule
+\textit{Sample} & & \\
+\quad Context & Preprints, no gatekeeping & Peer-reviewed journals \\
+\quad$N$ & [not disclosed] & 843 \\
+\quad Period & [not disclosed] & 2023--2026 \\[4pt]
+\textit{AI-style $\to$ Diffusion} & & \\
+\quad Direction & Positive & Positive \\
+\quad Significant (downloads) & Yes & Yes ($p < .001$) \\
+\quad Significant (citations) & Yes & Marginal ($p = .022$--$.178$) \\[4pt]
+\textit{Prestige $\to$ Diffusion} & & \\
+\quad Direction & Positive & Positive \\
+\quad Significant & Yes & No ($p = .104$--$.606$) \\[4pt]
+\textit{Prestige\,$\times$\,AI interaction} & & \\
+\quad Direction & Negative (attenuating) & Negative or near zero \\
+\quad Significant & Yes & No (all $p > .28$) \\
+\quad 95\% CI (download model) & [not yet available] & $[-0.164, +0.077]$ \\[4pt]
+\textit{Boundary condition} & & \\
+\quad Venue type & Open preprint & Peer-reviewed \\
+\quad Prestige premium & Operative & Absent (null in OLS) \\
+\quad AI moderation & Significant & Moot (no premium to moderate) \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note.} Jo and Li (2026) coefficient details will be inserted
+  after the paper is formally published with volume/issue/page numbers.
+  ``Moot'' in the present study reflects that the moderation mechanism
+  requires an operative prestige premium as a precondition.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\end{document}
