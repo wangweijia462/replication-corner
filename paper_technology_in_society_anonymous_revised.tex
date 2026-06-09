@@ -1,0 +1,548 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\onehalfspacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\emergencystretch=2em
+
+\title{Government Certification as Technology Governance:\\ Innovation Signals and Institutional Voids in China}
+\author{[Author information withheld for review]}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Public technology certifications can do more than transfer resources: they can create credible signals where markets struggle to recognize innovative capability. This paper studies China's ``Specialized, Refined, Distinctive, and Innovative'' (SRDI) certification program, a national screening system for technology-oriented small and medium-sized enterprises. I combine hand-collected certification records with A-share firm data from 2007--2021 and estimate staggered difference-in-differences models with firm and year fixed effects. Certification relaxes financing constraints, increases targeted investment, and promotes labor specialization. Effects on final innovation quality are statistically fragile and sensitive to inference choices, but heterogeneity-robust estimates suggest that certification may matter more in lower-institution cities than in higher-institution cities. The results support viewing public certification as technology-governance infrastructure that can partly substitute for weak market-based quality discovery.
+\end{abstract}
+
+\noindent\textbf{Keywords:} government certification; technology governance; institutional voids; innovation quality; SRDI; China; staggered difference-in-differences
+
+\noindent\textbf{JEL codes:} O31; O38; H25; L25; G14
+
+\section{Introduction}
+
+Governments increasingly use certification systems to identify technology-oriented firms whose capabilities are difficult for markets to evaluate. These programs do not only subsidize firms. They also create public signals: an official endorsement can tell banks, customers, suppliers, and local governments that a firm has passed a screening process for technological capability. The social value of such a signal depends on the institutional environment in which it is received. In places with deep financial markets and professional intermediaries, private actors already have several ways to assess innovation quality. In places with weaker institutions, the same public signal may become a substitute for missing market infrastructure.
+
+This paper studies that possibility using China's ``Specialized, Refined, Distinctive, and Innovative'' (SRDI) certification program. SRDI certification identifies small and medium-sized enterprises with strong specialization, proprietary technology, and niche-market positions. The program is important for technology governance because it connects public screening, credit access, industrial upgrading, and regional development. Policy instruments in this space range from direct subsidies and tax incentives to procurement preferences and certification programs \citep{rodrik2004,aghion2015}. Certification programs are distinctive in that they operate primarily through public information rather than direct resource transfer, and the effectiveness of public support programs for innovation varies substantially depending on context \citep{lerner2009}. China combines a national certification system with large subnational differences in financial development, governance quality, human capital, and openness, making it a useful empirical setting.
+
+The central question is whether government certification improves innovation outcomes uniformly, or whether its value is higher where local market institutions are weaker. I answer this question by combining hand-collected SRDI certification records with firm-level financial and patent data for A-share listed firms from 2007 to 2021. The empirical design uses staggered difference-in-differences models with firm and year fixed effects, event-study diagnostics, and heterogeneity-robust estimates.
+
+The evidence supports a cautious but coherent interpretation. Certification clearly affects several inputs into innovation: it eases financing constraints, increases targeted SRDI-related investment, and promotes labor specialization. These effects are visible across local institutional environments, suggesting that a national government signal is legible to banks and other evaluators. Evidence on final innovation quality is weaker. Conventional interaction estimates are positive but fragile under province-level clustering. Heterogeneity-robust estimates point instead toward a possible substitution pattern, with larger estimated gains in lower-institution cities, but the subgroup estimates are imprecise. Mechanism evidence also suggests different technological pathways: certification is associated with more breakthrough exploration in higher-institution cities and deeper labor specialization in lower-institution cities.
+
+This paper contributes to research on technology and society in three ways. First, it treats certification as a form of technology governance rather than as a narrow industrial-policy subsidy. Public labels can shape how society recognizes technological capability, how finance is allocated, and how firms choose between exploratory and refinement-oriented innovation. Second, it links technology governance to institutional voids. The evidence suggests that public certification may be most valuable where market-based evaluation systems are least developed. Third, the paper adds caution to empirical claims about certification programs. Negative pre-certification dynamics and statistically fragile moderation estimates mean that the results should be interpreted as quasi-experimental evidence with clear limitations, not as a definitive causal ranking of regions.
+
+The paper proceeds as follows. Section 2 explains SRDI certification as a technology-governance instrument and develops the institutional-substitution argument. Section 3 describes the data and empirical strategy. Section 4 presents the main estimates, robustness checks, and mechanism evidence. Section 5 discusses what the results imply for technology governance and regional innovation policy. Section 6 concludes.
+
+\section{Government Certification as Technology Governance}
+
+\subsection{Public signals and innovation quality}
+
+Innovation quality is difficult to observe. Patent counts can be inflated by filing incentives, balance-sheet indicators often miss intangible capability, and small technology firms may lack the reputation needed to convince external evaluators that their innovations are valuable. These information frictions matter because banks, suppliers, customers, and local governments must decide which firms deserve financing, procurement opportunities, or technical partnerships. Firms unable to signal quality credibly may face credit rationing even when their investment projects are productive \citep{stiglitz1981}.
+
+Certification programs can reduce these frictions. In a signaling framework, a credible label separates firms that meet a public standard from firms that do not \citep{spence1973}. This logic is close to the information-asymmetry problem in which high-quality firms cannot fully reveal their type through ordinary market accounts \citep{akerlof1970,leland1977}. In a technology-governance framework, the label does more than communicate private information. It shapes a social process of recognition: it tells actors in the innovation system which firms count as technologically capable and which capabilities deserve support. It can also create institutional legitimacy when public classification influences how organizations interpret quality \citep{dimaggio1983}.
+
+A simple two-type signaling logic clarifies the mechanism. Suppose firms are either high-capability or low-capability, while lenders observe only noisy output signals such as patent counts and accounting ratios. Certification is valuable if public screening is more accurate than private screening and if external actors believe that the certificate is costly or unlikely for low-capability firms to obtain. In high-institution cities, private screening precision is already high, so certification adds limited information. In low-institution cities, private screening precision is low, so the same certificate raises posterior beliefs about firm capability more sharply. Sharper posterior updating in turn relaxes financing constraints, enabling firms to invest in higher-quality innovation projects that would otherwise remain unfunded. This is the channel through which signal value maps onto patent-quality outcomes and yields the institutional-substitution prediction.
+
+The institutional setting determines how much a public signal matters. Where financial markets, legal institutions, professional services, and technology intermediaries are well developed, private actors can often evaluate firm quality without relying heavily on a government label \citep{li2008,hall2010}. Where these institutions are weak, the label may become a substitute for absent market infrastructure. The same certification can therefore have different marginal value across places.
+
+\subsection{The SRDI program}
+
+China's SRDI program was established by the Ministry of Industry and Information Technology (MIIT) to identify firms that are specialized, refined, distinctive, and innovative. The program draws on the ``hidden champions'' idea: many technologically capable manufacturing firms occupy narrow industrial niches but lack broad public visibility \citep{simon2009}. SRDI certification aims to make these capabilities visible to financiers, customers, and public agencies.
+
+The program has a multi-tier structure. Provincial governments first recognize firms that meet sector-specific criteria on specialization, market position, research and development intensity, and intellectual property. The national MIIT then screens selected firms for the higher-level ``Little Giant'' designation. Certification is associated with preferential access to policy-bank lending, procurement opportunities, and additional policy support. It also provides an official signal of technological capability.
+
+This dual nature matters. If SRDI works mainly through resource transfer, its effects may be larger in cities with strong institutions because firms there can absorb resources more efficiently. If SRDI works mainly through information revelation, its marginal value may be larger in cities with weaker institutions because alternative quality-assessment channels are scarce. These two mechanisms imply different patterns. China's broader patent environment includes subsidy programs that have raised patent filing quantities while generating mixed evidence on quality \citep{liu2017}, making it important to distinguish between instruments that reward output volume and those, like SRDI certification, that screen for underlying technological capability.
+
+\subsection{Institutional voids and competing expectations}
+
+Institutional voids---gaps in the market-supporting infrastructure that firms rely on for financing, contracting, and information about technology quality---are a persistent feature of emerging-economy environments \citep{north1990,khanna1997,mair2009}. Although capital should in principle flow to where it earns the highest return, institutional frailty can prevent this, leaving capable firms in weak-institution regions unable to attract financing \citep{lucas1990}. China's subnational variation provides a useful setting for studying these mechanisms. Large differences in local institutional quality are a persistent feature of Chinese economic geography, reflecting long-run differences in institutional development \citep{north1990,acemoglu2001}. Coastal innovation hubs such as Shenzhen, Hangzhou, and Suzhou have deeper capital markets, stronger human capital, more open innovation ecosystems, and more professional intermediaries. Many inland and western cities have thinner financial markets, weaker external openness, and fewer specialized services for technology firms. This variation predates most firm-level SRDI certification decisions.
+
+The complementarity expectation is that stronger institutions amplify public certification. In this view, sophisticated banks and investors are better able to interpret the SRDI signal, capable local governments implement support more effectively, and firms in developed innovation ecosystems can turn certification into higher-quality technological outputs.
+
+The substitution expectation is different. In weak-institution environments, firms face a larger gap between technological capability and external recognition. A public certification can fill part of this gap by giving external evaluators a credible standard. The label is not merely an additional signal; it may be the only widely accepted quality signal available to a capable firm. Under this view, certification has greater marginal value where private quality-discovery institutions are weaker.
+
+The empirical analysis tests these competing expectations. It first asks whether certification changes innovation inputs such as finance, targeted investment, and labor specialization. It then asks whether final innovation-quality effects vary with local institutional quality.
+
+\section{Data and Empirical Strategy}
+
+\subsection{Data sources and sample}
+
+The dataset combines firm-level financial data, patent data, hand-collected certification records, and city-level institutional indicators. Firm financial variables and patent records come from CSMAR for A-share listed firms from 2007 to 2021. SRDI certification status and timing are collected from official MIIT and provincial government announcements. City-level institutional variables come from the China Urban Statistical Yearbook and the China Regional Economic Statistics.
+
+After merging the datasets and dropping observations with missing core variables, the baseline sample contains 35,916 firm-year observations for 4,453 firms in 240 prefecture-level cities across 33 province-level units as coded in the database. This count reflects the data provider's regional coding and should be read as a clustering unit count rather than as a statement about formal mainland administrative geography. When the institutional-quality index is included, the effective sample falls to 27,998 observations because all four city-level institutional indicators must be observed. The five-year citation-window quality measure is available for 21,903 observations because firm-years after 2017 do not yet have a full five-year forward-citation window.
+
+\subsection{Variables}
+
+The main outcome is \(\textit{Quality}_{20\%}\), a continuous firm-year patent-quality index following \citet{li2026}. The index combines patent originality, measured by backward-citation diversity, and patent influence, measured by forward-citation impact. The 20 percent label refers to the citation-threshold rule used to identify higher-quality patents before aggregating patent-level information to the firm-year level; it is not a binary firm-level outcome. Robustness checks use alternative thresholds, \(\textit{Quality}_{15\%}\) and \(\textit{Quality}_{25\%}\), and a five-year citation-window measure. The treatment variable \(\textit{Fund}_{it}\) equals one from the first year in which firm \(i\) receives SRDI certification and zero otherwise.
+
+The institutional-quality index, \(\textit{Institution}_{ct}\), is the first principal component from an annual PCA of four city-level indicators: financial innovation depth, human capital endowment, external openness, and governance effectiveness. The first principal component explains about 74 percent of the variance, and all four indicators load positively. High- and low-institution subgroup estimates use the annual median of this time-varying index, so a city can move across the threshold if its relative institutional position changes over time. A time-average city classification would answer a slightly different question and should be treated as a robustness check. The main interaction term is \(\textit{Fund}_{it} \times \textit{Institution}_{ct}\).
+
+Control variables include log employment, asset tangibility, return on assets, return on equity, cash holdings, leverage, sales growth, and earnings-to-assets. Continuous variables are winsorized at the first and ninety-ninth percentiles. Several accounting ratios, especially cash holdings, ROE, and leverage, retain wide ranges after winsorization. I therefore treat them as controls rather than substantive outcomes and report their ranges transparently in Table 1. The low certification rate of 2.6 percent also implies limited statistical power, especially for subgroup and cluster-robust analyses.
+
+\begin{table}[htbp]
+\centering
+\caption{Descriptive statistics}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+Variable & Observations & Mean & Std. dev. & Range & Description \\
+\midrule
+\multicolumn{6}{l}{Panel A: Innovation and policy variables} \\
+\(\textit{Quality}_{20\%}\) & 35,916 & 0.495 & 0.897 & 0.000--4.727 & Patent-quality index, 20 percent threshold \\
+\(\textit{Quality}_{15\%}\) & 35,916 & 0.402 & 0.795 & 0.000--4.369 & Patent-quality index, 15 percent threshold \\
+\(\textit{Quality}_{25\%}\) & 35,916 & 0.567 & 0.979 & 0.000--5.037 & Patent-quality index, 25 percent threshold \\
+\(\textit{Quality}_{5yr}\) & 21,903 & 0.363 & 0.773 & 0.000--4.248 & Patent quality, five-year citation window \\
+\(\textit{Fund}\) & 35,916 & 0.026 & 0.160 & 0--1 & SRDI certification indicator \\
+\midrule
+\multicolumn{6}{l}{Panel B: Institutional quality and mechanisms} \\
+\(\textit{Institution}\) & 27,998 & 1.513 & 1.287 & -2.218--3.925 & City institutional index from PCA \\
+\(\textit{HighInst}\) & 27,998 & 0.511 & 0.500 & 0--1 & Above-median institution dummy \\
+\(\textit{SA}\) & 35,916 & -3.772 & 0.267 & (-4.583, -2.522) & SA financing-constraint index \\
+\(\textit{TargetedInvest}\) & 31,481 & 0.045 & 0.085 & 0.000--0.648 & Targeted SRDI investment ratio \\
+\(\textit{Breakthrough}\) & 22,787 & 0.581 & 0.926 & 0.000--3.829 & Log breakthrough patent count \\
+\(\textit{LaborSpec}\) & 19,340 & 0.516 & 0.269 & 0.000--1.000 & Labor specialization index \\
+\midrule
+\multicolumn{6}{l}{Panel C: Firm-level controls} \\
+Employment & 35,916 & 7.575 & 1.255 & 3.584--11.145 & Log employment \\
+Tangibility & 35,916 & 0.216 & 0.162 & 0.002--0.798 & Asset tangibility \\
+ROA & 35,916 & 0.074 & 0.075 & -0.301--0.413 & Return on assets \\
+ROE & 35,916 & 0.127 & 0.158 & -2.291--0.822 & Return on equity \\
+Cash holdings & 35,916 & 0.950 & 1.826 & 0.006--28.625 & Cash holding ratio \\
+Leverage & 35,916 & 0.095 & 0.084 & -0.283--0.446 & Asset-liability ratio \\
+Sales growth & 35,916 & 0.208 & 0.401 & -0.475--4.325 & Sales growth rate \\
+Earnings-to-assets & 35,916 & 0.739 & 0.613 & 0.016--2.976 & Earnings-to-assets ratio \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: The sample covers A-share listed firms from 2007 to 2021. Continuous variables are winsorized at the first and ninety-ninth percentiles. The institutional index is the first principal component of four city-level measures. Missing values in mechanism variables reflect differences in data-source coverage.
+\end{minipage}
+\end{table}
+
+\subsection{Empirical specification}
+
+The baseline specification is
+\begin{equation}
+\textit{Quality}_{it} =
+\alpha + \beta_1 \textit{Fund}_{it}
++ \beta_2 \textit{Institution}_{ct}
++ \beta_3(\textit{Fund}_{it}\times \textit{Institution}_{ct})
++ \gamma X_{it} + \mu_i + \lambda_t + \varepsilon_{it}.
+\end{equation}
+
+Here \(i\) indexes firms, \(c\) indexes cities, and \(t\) indexes years. Firm fixed effects, \(\mu_i\), absorb time-invariant firm differences. Year fixed effects, \(\lambda_t\), absorb national shocks. \(X_{it}\) contains the time-varying firm controls. Standard errors are clustered at the province level because SRDI implementation and related policy coordination operate substantially through provincial governments.
+
+The coefficient \(\beta_3\) captures whether local institutions moderate the certification effect. A positive and precise \(\beta_3\) would support institutional complementarity. A weak or negative moderation pattern, combined with larger direct effects in low-institution cities, would support institutional substitution.
+
+The identifying assumption is that, conditional on fixed effects and controls, certification timing is not driven by unobserved time-varying innovation shocks that also determine future patent quality. This assumption is demanding because SRDI certification is not randomly assigned. I therefore treat the estimates as quasi-experimental and use event studies, alternative estimators, matching, selection correction, and robustness checks to assess how sensitive the patterns are.
+
+\section{Results}
+
+\subsection{Baseline estimates}
+
+Table 2 presents the baseline interaction estimates. The certification dummy itself is close to zero once the interaction is included, suggesting that average effects differ across environments or are absorbed by firm fixed effects. The interaction between certification and institutional quality is consistently positive, with point estimates around 0.046--0.052. Under industry-level clustering, the estimate is statistically significant at the five percent level. Under the preferred province-level clustering, the point estimate remains 0.046 but is statistically imprecise. Because the number of province-level clusters is small and wild-cluster bootstrap \(p\)-values are not reported here, I do not make a strong significance claim from this coefficient.
+
+The magnitude is economically meaningful if taken at face value. A one-standard-deviation increase in institutional quality is associated with an additional 0.046 point increase in innovation quality for certified firms, about 9 percent of the mean outcome. The confidence intervals, however, are wide enough that the baseline model cannot establish a strong complementarity effect. Columns 5 and 6 are descriptive subgroup checks rather than formal moderation tests. They estimate conditional certification effects separately and do not contain the interaction structure used in columns 1--4.
+
+\begin{table}[htbp]
+\centering
+\caption{Baseline regressions: SRDI certification and institutional moderation}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+ & No controls & Province SE & City SE & Industry SE & High institution & Low institution \\
+\midrule
+SRDI certification & 0.028 & -0.001 & -0.001 & -0.001 & 0.076 & 0.058 \\
+ & (0.051) & (0.055) & (0.062) & (0.042) & (0.048) & (0.047) \\
+Institutional quality & 0.120 & 0.107 & 0.107 & 0.107 & -- & -- \\
+ & (0.078) & (0.072) & (0.071) & (0.064) & -- & -- \\
+Certification \(\times\) institutional quality & 0.052 & 0.046 & 0.046 & 0.046** & -- & -- \\
+ & (0.033) & (0.031) & (0.030) & (0.018) & -- & -- \\
+Firm controls & No & Yes & Yes & Yes & Yes & Yes \\
+Firm fixed effects & Yes & Yes & Yes & Yes & Yes & Yes \\
+Year fixed effects & Yes & Yes & Yes & Yes & Yes & Yes \\
+Within \(R^2\) & 0.012 & 0.016 & 0.016 & 0.016 & 0.017 & 0.017 \\
+Observations & 27,998 & 27,998 & 27,998 & 27,998 & 14,309 & 13,689 \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: The dependent variable is the 20 percent patent-quality index. Columns 1--4 use the full sample with the institutional index. Columns 5 and 6 split the sample by above- and below-median institutional quality and report conditional certification effects; these split-sample coefficients are descriptive complements and should not be read as formal tests of the interaction hypothesis. Firm controls include log employment, tangibility, ROA, ROE, cash holdings, leverage, sales growth, and earnings-to-assets. Standard errors are in parentheses and clustered as indicated. * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
+\end{minipage}
+\end{table}
+
+\subsection{Event-study evidence and selection concerns}
+
+The event study shows positive post-certification coefficients in five of seven post-treatment periods, ranging from about 0.016 to 0.043. The pre-treatment period is more important for interpretation. Several pre-certification coefficients are negative and statistically significant, especially in the second year before certification and in the long-run binned pre-period.
+
+These negative pre-trends are not a small technical detail. A conventional DID interpretation would treat them as evidence against strict parallel trends, and strict parallel trends are not satisfied. The SRDI program's design offers a substantive explanation: official criteria emphasize accumulated technological capability, specialization, R\&D intensity, and intellectual property ownership, but they do not require recent citation-weighted patent quality. Certification may therefore select firms with latent capability whose recent output is temporarily weak, a pattern close to the pre-programme dip discussed by \citet{heckman1999}. This ``selection on distressed quality'' interpretation is plausible, but it does not remove the identification concern. The paper therefore treats the estimates as quasi-experimental evidence under imperfect pre-trends. A direct test of this mechanism would split firms by pre-certification quality declines and test whether larger declines predict certification; that test requires application or pre-treatment selection data that are not available in the current submission.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\textwidth]{fig_event_study.png}
+\caption{Dynamic effects of SRDI certification on innovation quality}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: Relative year -1 is the omitted period. Pre-period indicators cover years -6 through -2, with years \(\leq -6\) binned. Post-period indicators cover years 0 through +6, with years \(\geq +6\) binned. The specification includes firm controls, firm fixed effects, and year fixed effects. Standard errors are clustered at the province level. The horizontal axis shows years relative to SRDI certification; t\,=\,0 is the first year of certification.
+\end{minipage}
+\end{figure}
+
+\subsection{Endogeneity and robustness checks}
+
+Table 3 reports matching and selection checks addressing nonrandom certification timing. The interaction coefficient remains positive in the PSM-RD, PSM-size, and Heckman specifications. These estimates do not solve the pre-trend problem, but they show that the positive interaction pattern is not limited to the baseline regression.
+
+\begin{table}[htbp]
+\centering
+\caption{Matching and selection checks}
+\begin{tabular}{lrrr}
+\toprule
+ & (1) & (2) & (3) \\
+ & PSM-RD & PSM-size & Heckman \\
+\midrule
+SRDI certification & -0.008 & -- & -0.005 \\
+ & (0.052) & -- & (0.055) \\
+Institutional quality & 0.046 & -- & 0.110 \\
+ & (0.085) & -- & (0.072) \\
+Certification \(\times\) institutional quality & 0.049 & 0.049* & 0.050 \\
+ & (0.030) & (0.027) & (0.031) \\
+Inverse Mills ratio & -- & -- & 0.062 \\
+ & -- & -- & (0.065) \\
+Firm and year fixed effects & Yes & Yes & Yes \\
+Within \(R^2\) & 0.023 & -- & 0.017 \\
+Observations & 11,255 & -- & 27,012 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: The dependent variable is the 20 percent patent-quality index. All specifications include firm controls, firm fixed effects, and year fixed effects. Standard errors are clustered at the province level. Column 2 reports only the interaction coefficient from the PSM-size specification because the main effects are not separately comparable in that matched specification. The IV specification is reported in Appendix Table A1 as a diagnostic only, because the first stage is weak. * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
+\end{minipage}
+\end{table}
+
+Table 4 reports eight robustness checks. The interaction coefficient is positive in seven of eight specifications. It remains positive when the quality threshold changes, when the treatment is replaced by national or provincial SRDI designations, when innovative-city policy status is controlled for, and when unicorn or gazelle firms are excluded. The five-year citation-window outcome produces a negative coefficient, which is difficult to interpret because later cohorts have mechanically shorter post-treatment citation windows. The robustness evidence supports directional stability but not strong statistical precision.
+
+\begin{table}[htbp]
+\centering
+\caption{Robustness checks}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+ & \(Q_{15\%}\) & \(Q_{25\%}\) & \(Q_{5yr}\) & National & Province & +InnoCity & Ex-unicorn & SME \\
+\midrule
+Certification \(\times\) institutional quality & 0.040 & 0.045 & -0.047 & 0.082** & 0.064 & 0.045 & 0.043 & 0.051 \\
+ & (0.031) & (0.030) & (0.073) & (0.030) & (0.038) & (0.033) & (0.035) & (0.054) \\
+Certification or variant & -0.020 & -0.005 & 0.040 & -0.027 & -0.042 & -0.001 & -0.006 & 0.081 \\
+ & (0.053) & (0.052) & (0.060) & (0.062) & (0.064) & (0.055) & (0.057) & (0.076) \\
+Firm and year fixed effects & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Province-clustered SE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Within \(R^2\) & 0.013 & 0.015 & 0.016 & 0.016 & 0.016 & 0.016 & 0.017 & 0.019 \\
+Observations & 27,998 & 27,998 & 17,661 & 27,581 & 27,850 & 27,998 & 27,285 & 2,359 \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: Each column repeats the baseline specification with one modification. Columns 1--3 use alternative patent-quality outcomes. Column 4 uses the national ``Little Giant'' designation. Column 5 uses province-level designation. Column 6 controls for innovative-city policy status. Column 7 excludes unicorn and gazelle firms. Column 8 restricts the sample to small and medium-sized firms. * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
+\end{minipage}
+\end{table}
+
+\subsection{Mechanisms}
+
+Table 5 shows that certification changes innovation inputs. The SA financing-constraint index falls by 0.050, indicating improved access to finance. Targeted investment rises by 0.025. Labor specialization rises by 0.109. The interaction terms are small or imprecise, which suggests that the national certification is broadly interpretable across cities.
+
+This pattern is important for the TiS framing of the paper. Certification works as a public technology signal that multiple social actors can recognize. The evidence does not show that institutions are irrelevant. Rather, it suggests that the same signal may be processed nationally while its downstream use differs locally. All four interaction terms in Panel A are negative, and the targeted-investment interaction is marginally significant. This pattern is consistent with the mechanism-level substitution story: the marginal input response to certification is weaker where local institutions already provide alternative routes to finance, investment, and specialization. Because the mechanism table tests several outcomes, these results should be interpreted as exploratory channel evidence rather than as a family-wise causal test.
+
+\begin{table}[htbp]
+\centering
+\caption{Mechanism analysis: direct policy channels}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+ & (1) & (2) & (3) & (4) \\
+Dependent variable & SA index & Targeted investment & Breakthrough & Labor specialization \\
+\midrule
+\multicolumn{5}{l}{Panel A: Full-sample interaction model} \\
+SRDI certification & -0.050*** & 0.025** & 0.268 & 0.109** \\
+ & (0.007) & (0.010) & (0.402) & (0.046) \\
+Institutional quality & -0.012* & -0.000 & 0.151** & -0.009 \\
+ & (0.006) & (0.004) & (0.064) & (0.016) \\
+Certification \(\times\) institutional quality & -0.003 & -0.009* & -0.029 & -0.030 \\
+ & (0.004) & (0.004) & (0.121) & (0.020) \\
+\midrule
+\multicolumn{5}{l}{Panel B: SA constraint by institutional subgroup} \\
+High-institution cities & -0.057*** & -- & -- & -- \\
+ & (0.009) & -- & -- & -- \\
+Low-institution cities & -0.048*** & -- & -- & -- \\
+ & (0.006) & -- & -- & -- \\
+\midrule
+Firm and year fixed effects & Yes & Yes & Yes & Yes \\
+Province-clustered SE & Yes & Yes & Yes & Yes \\
+Within \(R^2\) & 0.053 & 0.010 & 0.004 & 0.084 \\
+Observations & 27,998 & 24,318 & 18,297 & 15,073 \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: The SA index follows \citet{hadlock2010}; more negative values indicate tighter financing constraints. Breakthrough measures log patent applications in technology classes not previously explored by the firm. Labor specialization is a Herfindahl-Hirschman index of labor allocation. * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
+\end{minipage}
+\end{table}
+
+\subsection{Different innovation pathways}
+
+Table 6 separates novelty-generating and refinement-oriented outcomes. In high-institution cities, certification significantly increases breakthrough exploration. In low-institution cities, certification significantly increases labor specialization. The result suggests that certification does not push all firms toward the same technological behavior. Instead, the local social and institutional environment shapes what the public signal makes possible.
+
+\begin{table}[htbp]
+\centering
+\caption{Innovation pathways by institutional environment}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{Novelty-generating} & \multicolumn{2}{c}{Refinement-oriented} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & (1) Full sample & (2) Subgroups & (3) Full sample & (4) Subgroups \\
+\midrule
+\multicolumn{5}{l}{Panel A: Full-sample interaction model} \\
+SRDI certification & 0.268 & -- & 0.109** & -- \\
+ & (0.402) & -- & (0.046) & -- \\
+Certification \(\times\) institutional quality & -0.029 & -- & -0.030 & -- \\
+ & (0.121) & -- & (0.020) & -- \\
+\midrule
+\multicolumn{5}{l}{Panel B: Certification effect by subgroup} \\
+High-institution cities & -- & 0.128*** & -- & 0.035 \\
+ & -- & (0.036) & -- & (0.030) \\
+Low-institution cities & -- & 0.304 & -- & 0.091** \\
+ & -- & (0.278) & -- & (0.033) \\
+\midrule
+Firm and year fixed effects & Yes & Yes & Yes & Yes \\
+Province-clustered SE & Yes & Yes & Yes & Yes \\
+Observations & 18,297 & 9,282/9,015 & 15,073 & 7,571/7,502 \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: Novelty-generating activity is measured by log patent applications in technology classes not previously explored by the firm. Refinement-oriented activity is measured by labor specialization. Subgroup columns report separate estimates for above- and below-median institutional quality. * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
+\end{minipage}
+\end{table}
+
+\subsection{Heterogeneity-robust DID estimates}
+
+The Callaway and Sant'Anna estimator addresses a key concern in staggered treatment designs: conventional two-way fixed effects can place negative weights on heterogeneous treatment effects \citep{goodman2021,callaway2021}. Table 7 reports simple aggregated ATTs using never-treated firms as the comparison group.
+
+The full-sample ATT is essentially zero. The subgroup estimates point in the direction of institutional substitution: the ATT is -0.019 in high-institution cities and 0.040 in low-institution cities. Neither subgroup estimate is statistically significant. The right interpretation is therefore not that the estimator proves substitution, but that it weakens the stronger complementarity claim and provides suggestive support for a substitution pattern.
+
+\begin{table}[htbp]
+\centering
+\caption{Callaway and Sant'Anna heterogeneity-robust ATT}
+\begin{tabular}{lrrr}
+\toprule
+ & (1) Full sample & (2) High institution & (3) Low institution \\
+\midrule
+Simple ATT & 0.001 & -0.019 & 0.040 \\
+ & (0.022) & (0.047) & (0.037) \\
+\(p\)-value & 0.957 & 0.692 & 0.283 \\
+Estimator & C\&SA 2021 & C\&SA 2021 & C\&SA 2021 \\
+Control group & Never treated & Never treated & Never treated \\
+SE clustering & Province & Province & Province \\
+Observations & 34,814 & 13,742 & 12,922 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: Estimates use cohort-time average treatment effects and simple aggregation. The outcome is the 20 percent patent-quality index. Firm controls are included. High- and low-institution subsamples are defined by the annual median of the institutional-quality index.
+\end{minipage}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\textwidth]{fig_placebo_permutation.png}
+\caption{Placebo permutation of institutional quality}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes: In each iteration, institutional quality is randomly permuted within calendar year and the baseline interaction model is re-estimated. None of the 200 permuted estimates exceeds the observed interaction estimate of 0.046, giving a finite-simulation permutation \(p\)-value below 0.005. This test evaluates whether the observed interaction is unusually large relative to randomized institutional assignments; it does not replace cluster-robust inference for sampling uncertainty.
+\end{minipage}
+\end{figure}
+
+\subsection{Why TWFE and heterogeneity-robust estimates differ}
+
+The conventional TWFE split-sample estimates and the Callaway and Sant'Anna estimates do not point in the same direction. In Table 2, the simple split-sample certification coefficient is larger in high-institution cities (0.076) than in low-institution cities (0.058). In Table 7, the heterogeneity-robust ATT is larger in low-institution cities (0.040) than in high-institution cities (-0.019). This difference is substantively important and requires explanation.
+
+The source of the divergence is methodological. The split-sample TWFE estimates average treatment effects across cohorts and calendar years under a common-effect structure. With staggered adoption and heterogeneous treatment effects, TWFE can compare already-treated firms with later-treated firms and can place nontransparent, sometimes negative, weights on cohort-specific effects \citep{goodman2021,sun2021}. The Callaway and Sant'Anna estimator instead constructs cohort-time treatment effects using never-treated firms as the comparison group, avoiding contaminated comparisons \citep{callaway2021}. For that reason, I treat the C\&S estimates as the main evidence on direct treatment-effect heterogeneity and the TWFE estimates as descriptive evidence on conditional associations. Resolving this tension definitively would require richer counterfactual data, such as certification applications and rejections, which are not available in the current setting.
+
+\section{Discussion}
+
+The results recast SRDI certification as a technology-governance instrument. A public label changes the social recognition of technological capability. It can affect the willingness of banks to lend, the ability of firms to justify specialized investment, and the technological pathway that a firm pursues after recognition. This interpretation is broader than a subsidy account because it emphasizes information, legitimacy, and institutional context.
+
+The evidence also shows why certification programs may matter most outside leading innovation hubs. In developed ecosystems, firms already have venture capital networks, professional services, skilled labor markets, and reputational channels. SRDI certification adds another signal to an information-rich environment. In weaker ecosystems, capable firms have fewer ways to make their quality visible. Government certification can therefore serve as public signal infrastructure, a function that is distinct from and complementary to the resource-transfer role emphasized in much of the industrial-policy evaluation literature.
+
+The mechanism evidence suggests that technology governance does not produce a single upgrading path. In high-institution cities, certification is linked to exploration into new technology domains. In low-institution cities, certification is linked to refinement through labor specialization. This distinction matters for policy. If governments evaluate certification only by frontier exploration, they may overlook refinement-oriented upgrading that is more feasible and socially valuable in institutionally thinner regions.
+
+The study has five important limitations. First, SRDI certification is not randomly assigned. Negative pre-certification dynamics show that treated firms differ from controls before certification, likely because the program screens for latent capability, and strict parallel trends are not satisfied. This selection pattern is theoretically meaningful but empirically challenging. Second, the province-level number of clusters limits statistical power. Several estimates are directionally stable but imprecise, and the absence of wild-cluster bootstrap \(p\)-values makes the inference incomplete. Third, the IV specification has weak-instrument concerns, so it cannot solve endogeneity on its own (see Appendix Table A1). Fourth, the sample covers listed firms, which are more visible and better resourced than the broader population of SMEs. Fifth, the paper tests several mechanism outcomes and subgroups; the mechanism evidence should therefore be interpreted with multiple-testing caution.
+
+These limitations point to the next empirical step. Firm-level application records would allow researchers to compare certified firms with rejected applicants or eligible nonrecipients, improving counterfactual construction. Richer credit-contract data would show whether certification changes loan terms, collateral requirements, or lender screening. Broader SME data would test whether the signal matters more for firms outside the listed-company population.
+
+\section{Conclusion}
+
+This paper studies whether public certification can operate as technology-governance infrastructure. Using China's SRDI program, I show that certification improves several innovation inputs: financing constraints ease, targeted investment rises, and labor specialization increases. These effects are visible across institutional environments, suggesting that a national certification label is broadly interpretable.
+
+The evidence on final innovation quality is more cautious. Conventional interaction estimates suggest a positive relation between certification and institutional quality, but the result is statistically fragile under province-level clustering. Heterogeneity-robust estimates point in the opposite direction: innovation-quality gains are larger in low-institution cities than in high-institution cities, though the subgroup estimates are imprecise. Together, the evidence does not support a simple claim that strong local institutions always amplify public innovation policy, and it motivates a more careful view of certification as public signal infrastructure under institutional voids.
+
+The broader implication is that certification can partly substitute for missing market-based quality discovery. In institutionally weak regions, public recognition may help capable technology firms become visible to financiers and partners. In stronger regions, the same recognition may support riskier exploratory innovation. Technology policy should therefore consider not only which firms receive certification, but also which local institutions shape the meaning and use of the certificate.
+
+\appendix
+\section{Diagnostic IV Specification}
+
+The baseline paper does not rely on the instrumental-variable estimate because the first stage is weak. Appendix Table A1 reports the diagnostic specification. The instrument is the share of other cities within the same province that have adopted SRDI certification by year \(t\), excluding city \(c\) itself (province non-self city adoption rate). This spatial peer-influence construction follows the identifying logic that provincial diffusion of certification norms raises the probability of local certification but does not directly affect individual firm patent quality. The Kleibergen-Paap Wald statistic is 3.77, well below conventional weak-instrument thresholds \citep{andrews2019}. The IV coefficient is therefore not treated as a preferred estimate; this table is included solely as a diagnostic.
+
+\begin{table}[htbp]
+\centering
+\caption{Appendix Table A1: Weak-instrument diagnostic}
+\begin{tabular}{lr}
+\toprule
+ & IV-2SLS \\
+\midrule
+SRDI certification & -1.534 \\
+ & (2.072) \\
+Institutional quality & 0.099 \\
+ & (0.059) \\
+Certification \(\times\) institutional quality & 0.803 \\
+ & (0.936) \\
+Firm and year fixed effects & Yes \\
+KP Wald F & 3.77 \\
+Observations & 21,032 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.88\textwidth}
+\footnotesize Notes: The dependent variable is the 20 percent patent-quality index. The instrument is the province non-self city adoption rate (share of other cities in the same province that have adopted SRDI certification by year \(t\)). Standard errors are clustered at the province level. Because the KP Wald F statistic indicates weak-instrument risk, this table is diagnostic only and should not be used for causal inference \citep{andrews2019}.
+\end{minipage}
+\end{table}
+
+\clearpage
+\begin{thebibliography}{99}
+
+\bibitem[Acemoglu et al.(2001)]{acemoglu2001}
+Acemoglu, D., Johnson, S., and Robinson, J. A. (2001).
+The colonial origins of comparative development: An empirical investigation.
+\textit{American Economic Review}, 91(5), 1369--1401.
+
+\bibitem[Aghion et al.(2015)]{aghion2015}
+Aghion, P., Cai, J., Dewatripont, M., Du, L., Harrison, A., and Legros, P. (2015).
+Industrial policy and competition.
+\textit{American Economic Journal: Macroeconomics}, 7(4), 1--32.
+
+\bibitem[Akerlof(1970)]{akerlof1970}
+Akerlof, G. A. (1970).
+The market for ``lemons'': Quality uncertainty and the market mechanism.
+\textit{Quarterly Journal of Economics}, 84(3), 488--500.
+
+\bibitem[Andrews et al.(2019)]{andrews2019}
+Andrews, I., Stock, J. H., and Sun, L. (2019).
+Weak instruments in IV regression: Theory and practice.
+\textit{Annual Review of Economics}, 11, 727--753.
+
+\bibitem[Callaway and Sant'Anna(2021)]{callaway2021}
+Callaway, B., and Sant'Anna, P. H. C. (2021).
+Difference-in-differences with multiple time periods.
+\textit{Journal of Econometrics}, 225(2), 200--230.
+
+\bibitem[DiMaggio and Powell(1983)]{dimaggio1983}
+DiMaggio, P. J., and Powell, W. W. (1983).
+The iron cage revisited: Institutional isomorphism and collective rationality in organizational fields.
+\textit{American Sociological Review}, 48(2), 147--160.
+
+\bibitem[Goodman-Bacon(2021)]{goodman2021}
+Goodman-Bacon, A. (2021).
+Difference-in-differences with variation in treatment timing.
+\textit{Journal of Econometrics}, 225(2), 254--277.
+
+\bibitem[Hadlock and Pierce(2010)]{hadlock2010}
+Hadlock, C. J., and Pierce, J. R. (2010).
+New evidence on measuring financial constraints: Moving beyond the KZ index.
+\textit{Review of Financial Studies}, 23(5), 1909--1940.
+
+\bibitem[Hall and Lerner(2010)]{hall2010}
+Hall, B. H., and Lerner, J. (2010).
+The financing of R\&D and innovation.
+In Hall, B. H., and Rosenberg, N. (Eds.), \textit{Handbook of the Economics of Innovation}, Vol. 1.
+Elsevier.
+
+\bibitem[Heckman and Smith(1999)]{heckman1999}
+Heckman, J. J., and Smith, J. A. (1999).
+The pre-programme earnings dip and the determinants of participation in a social programme: Implications for simple programme evaluation strategies.
+\textit{Economic Journal}, 109(457), 313--348.
+
+\bibitem[Khanna and Palepu(1997)]{khanna1997}
+Khanna, T., and Palepu, K. (1997).
+Why focused strategies may be wrong for emerging markets.
+\textit{Harvard Business Review}, 75(4), 41--51.
+
+\bibitem[Leland and Pyle(1977)]{leland1977}
+Leland, H. E., and Pyle, D. H. (1977).
+Informational asymmetries, financial structure, and financial intermediation.
+\textit{Journal of Finance}, 32(2), 371--387.
+
+\bibitem[Lerner(2009)]{lerner2009}
+Lerner, J. (2009).
+\textit{Boulevard of Broken Dreams: Why Public Efforts to Boost Entrepreneurship and Venture Capital Have Failed--and What to Do About It}.
+Princeton University Press.
+
+\bibitem[Li(2008)]{li2008}
+Li, H. (2008).
+Financial development and innovation: Cross-country evidence.
+\textit{Journal of Financial Economics}, 88(1), 116--145.
+
+\bibitem[Li et al.(2026)]{li2026}
+Li, T., Song, G., Jin, X., and Wang, H. (2026).
+Specialized innovation policy and innovation quality: Evidence from invention patent text.
+\textit{The World Economy}, forthcoming.
+
+\bibitem[Liu et al.(2017)]{liu2017}
+Liu, Q., Lu, R., Zhang, Y., and Zheng, H. (2017).
+The patent subsidy trap: Evidence from China.
+Working paper.
+
+\bibitem[Lucas(1990)]{lucas1990}
+Lucas, R. E., Jr. (1990).
+Why doesn't capital flow from rich to poor countries?
+\textit{American Economic Review}, 80(2), 92--96.
+
+\bibitem[Mair and Marti(2009)]{mair2009}
+Mair, J., and Marti, I. (2009).
+Entrepreneurship in and around institutional voids: A case study from Bangladesh.
+\textit{Journal of Business Venturing}, 24(5), 419--435.
+
+\bibitem[North(1990)]{north1990}
+North, D. C. (1990).
+\textit{Institutions, Institutional Change and Economic Performance}.
+Cambridge University Press.
+
+\bibitem[Rodrik(2004)]{rodrik2004}
+Rodrik, D. (2004).
+Industrial policy for the twenty-first century.
+CEPR Discussion Paper.
+
+\bibitem[Simon(2009)]{simon2009}
+Simon, H. (2009).
+\textit{Hidden Champions of the Twenty-First Century: The Success Strategies of Unknown World Market Leaders}.
+Springer.
+
+\bibitem[Spence(1973)]{spence1973}
+Spence, M. (1973).
+Job market signaling.
+\textit{Quarterly Journal of Economics}, 87(3), 355--374.
+
+\bibitem[Stiglitz and Weiss(1981)]{stiglitz1981}
+Stiglitz, J. E., and Weiss, A. (1981).
+Credit rationing in markets with imperfect information.
+\textit{American Economic Review}, 71(3), 393--410.
+
+\bibitem[Sun and Abraham(2021)]{sun2021}
+Sun, L., and Abraham, S. (2021).
+Estimating dynamic treatment effects in event studies with heterogeneous treatment effects.
+\textit{Journal of Econometrics}, 225(2), 175--199.
+
+\end{thebibliography}
+
+\end{document}
