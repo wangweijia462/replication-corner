@@ -1,52 +1,41 @@
 # Revision Notes
 
-## Files in this submission
+## Files in This Submission
 
 | File | Description |
 |------|-------------|
 | `paper_technology_in_society_anonymous_revised.tex` | Main manuscript (blind review) |
+| `title_page_with_author_details.tex` | Separate title page with author details |
 | `cover_letter_technology_in_society_revised.tex` | Cover letter |
 | `declarations_and_author_biography.tex` | Declarations and author biography |
+| `fig_event_study.png` / `fig_event_study.pdf` | Re-exported event-study figure |
+| `fig_placebo_permutation.png` / `fig_placebo_permutation.pdf` | Redesigned placebo permutation figure |
+| `wild_bootstrap_summary.md` | Summary of province-level wild-cluster bootstrap results |
+| `make_event_study.do` / `make_placebo_permutation.do` / `run_wild_bootstrap.do` | Stata scripts used for the new figures and bootstrap checks |
 | `revision_notes.md` | This file |
 
-## Summary of changes from previous version (`_1.tex`)
+## Summary of Changes From Previous Version
 
-### Theory (Section 2)
-- **Section 2.1**: Added Stiglitz & Weiss (1981) citation for credit rationing; added bridge sentence in the two-type signaling paragraph connecting posterior belief updating → financing relaxation → innovation quality, making the substitution prediction explicit
-- **Section 2.2**: Added Liu et al. (2017) citation on China's patent subsidy environment to motivate the distinction between quantity-rewarding and capability-screening instruments
-- **Section 2.3**: Added institutional voids background paragraph citing North (1990), Khanna & Palepu (1997), Mair & Marti (2009); added Lucas (1990) on capital flow and institutional frailty; added Acemoglu et al. (2001) on institutional persistence; added Li (2008) and Hall & Lerner (2010) on financial development and innovation
+### Theory
 
-### Introduction
-- Added one paragraph contextualizing SRDI within the broader industrial-policy literature, citing Rodrik (2004), Aghion et al. (2015), and Lerner (2009)
+- **Section 2.1**: Added Stiglitz and Weiss (1981) citation for credit rationing; added a bridge sentence connecting posterior belief updating, financing relaxation, and innovation quality.
+- **Section 2.2**: Added published evidence on China's patenting surge and patent-subsidy policy (Hu et al. 2017; Lin et al. 2021) to motivate the distinction between quantity-rewarding and capability-screening instruments.
+- **Section 2.3**: Added institutional voids background paragraph citing North (1990), Khanna and Palepu (1997), and Mair and Marti (2009); added Lucas (1990), Acemoglu et al. (2001), Li (2008), and Hall and Lerner (2010).
 
-### Results (Section 4)
-- **Section 4.1**: Changed "wild-cluster bootstrap inference is not yet reported" to "wild-cluster bootstrap p-values are not reported here" to avoid implying the paper is incomplete
-- **Sections 4.5/4.6 reordered**: C&S results (Table 7) now appear as Section 4.5 *before* the methodological explanation (Section 4.6 "Why TWFE and heterogeneity-robust estimates differ"), so readers see the results before the explanation
-- **Figure 1 caption**: Added explicit note that the horizontal axis shows years relative to SRDI certification (not stock listing)
+### Results
 
-### Appendix
-- Added description of the instrument construction (province non-self city adoption rate) in the appendix text
-- Added Andrews et al. (2019) citation for weak-instrument methodology
+- **Section 4.1**: Added province-level wild-cluster bootstrap inference for the preferred interaction specification. Using 9,999 replications with Webb weights, the bootstrap p-value for `Certification x institutional quality` is 0.280. A Rademacher-weight run gives a similar value, 0.274.
+- **Section 4.2 / Figure 1**: Re-exported `fig_event_study.png` and `fig_event_study.pdf` from Stata. The horizontal axis now reads "Years relative to certification"; the text and figure note are aligned with the regenerated coefficients.
+- **Figure 2**: Redesigned `fig_placebo_permutation.png` and `fig_placebo_permutation.pdf` as a histogram plus kernel density overlay, with a vertical dashed line at the observed interaction estimate beta3 = 0.046. The finite-simulation permutation p-value is 0.004975.
+- **Sections 4.5/4.6**: Callaway and Sant'Anna results now appear before the methodological explanation of why TWFE and heterogeneity-robust estimates differ.
 
-### References
-- Removed `acemoglu2012` (no natural home in the condensed paper)
-- All remaining 24 references now have at least one in-text citation
+### References and Submission Files
 
-### Cover letter
-- Updated from "four" to "five" substantive revisions
-- Fifth revision explicitly describes theory strengthening and citation infrastructure added
-- Data availability language updated to "upon request during review and upon acceptance"
+- Updated Li et al. (2026) from forthcoming to the formally published Chinese journal article: *The Journal of World Economy*, 49(4), 36--67.
+- Replaced the unverifiable Liu et al. (2017) working-paper citation with published references: Hu et al. (2017) and Lin et al. (2021).
+- Removed unused Heckman and Smith (1999) after the event-study discussion no longer uses the pre-programme dip mechanism.
+- Updated the cover letter, declarations, author biography, and data-availability language for the Technology in Society submission package.
 
-### Declarations
-- Data availability language aligned with cover letter
-- Author biography updated to foreground "technology governance" as primary research area
+## Remaining Optional Items
 
-## Outstanding items (require author action)
-
-1. **Figure 1 (`fig_event_study.png`)**: The x-axis label in the actual figure file must be changed from "Years relative to listing" to "Years relative to certification". This must be done in the figure-generating code (Stata/R) and the PNG re-exported before final submission.
-
-2. **Wild Cluster Bootstrap**: Province-level clustering uses ~33 clusters, below the recommended threshold. Adding wild-cluster bootstrap p-values (e.g., via `boottest` in Stata) to Table 2 would strengthen inference claims.
-
-3. **Li et al. (2026)**: Verify whether this paper has been formally published in *The World Economy*. If so, update the bibliography entry with volume, issue, and page numbers.
-
-4. **Figure 2 (`fig_placebo_permutation.png`)**: Consider redesigning as a histogram + kernel density overlay showing the distribution of 200 permuted coefficients, with a vertical line at the true estimate (0.046). The current scatter format is hard to read.
+None.
