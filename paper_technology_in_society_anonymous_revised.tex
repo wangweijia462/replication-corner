@@ -41,7 +41,7 @@ The central question is whether government certification improves innovation out
 
 The evidence supports a cautious but coherent interpretation. Certification clearly affects several inputs into innovation: it eases financing constraints, increases targeted SRDI-related investment, and promotes labor specialization. These effects are visible across local institutional environments, suggesting that a national government signal is legible to banks and other evaluators. Evidence on final innovation quality is weaker. Conventional interaction estimates are positive but fragile under province-level clustering. Heterogeneity-robust estimates point instead toward a possible substitution pattern, with larger estimated gains in lower-institution cities, but the subgroup estimates are imprecise. Mechanism evidence also suggests different technological pathways: certification is associated with more breakthrough exploration in higher-institution cities and deeper labor specialization in lower-institution cities.
 
-This paper contributes to research on technology and society in three ways. First, it treats certification as a form of technology governance rather than as a narrow industrial-policy subsidy. Public labels can shape how society recognizes technological capability, how finance is allocated, and how firms choose between exploratory and refinement-oriented innovation. Second, it links technology governance to institutional voids. The evidence suggests that public certification may be most valuable where market-based evaluation systems are least developed. Third, the paper adds caution to empirical claims about certification programs. Negative pre-certification dynamics and statistically fragile moderation estimates mean that the results should be interpreted as quasi-experimental evidence with clear limitations, not as a definitive causal ranking of regions.
+This paper contributes to research on technology and society in three ways. First, it treats certification as a form of technology governance rather than as a narrow industrial-policy subsidy. Public labels can shape how society recognizes technological capability, how finance is allocated, and how firms choose between exploratory and refinement-oriented innovation. Second, it links technology governance to institutional voids. The evidence suggests that public certification may be most valuable where market-based evaluation systems are least developed. Third, the paper adds caution to empirical claims about certification programs. Statistically fragile moderation estimates, together with a quasi-experimental event-study design that requires cautious interpretation, mean that the results should be read as suggestive evidence with clear limitations, not as a definitive causal ranking of regions.
 
 The paper proceeds as follows. Section 2 explains SRDI certification as a technology-governance instrument and develops the institutional-substitution argument. Section 3 describes the data and empirical strategy. Section 4 presents the main estimates, robustness checks, and mechanism evidence. Section 5 discusses what the results imply for technology governance and regional innovation policy. Section 6 concludes.
 
@@ -63,7 +63,7 @@ China's SRDI program was established by the Ministry of Industry and Information
 
 The program has a multi-tier structure. Provincial governments first recognize firms that meet sector-specific criteria on specialization, market position, research and development intensity, and intellectual property. The national MIIT then screens selected firms for the higher-level ``Little Giant'' designation. Certification is associated with preferential access to policy-bank lending, procurement opportunities, and additional policy support. It also provides an official signal of technological capability.
 
-This dual nature matters. If SRDI works mainly through resource transfer, its effects may be larger in cities with strong institutions because firms there can absorb resources more efficiently. If SRDI works mainly through information revelation, its marginal value may be larger in cities with weaker institutions because alternative quality-assessment channels are scarce. These two mechanisms imply different patterns. China's broader patent environment includes subsidy programs that have raised patent filing quantities while generating mixed evidence on quality \citep{liu2017}, making it important to distinguish between instruments that reward output volume and those, like SRDI certification, that screen for underlying technological capability.
+This dual nature matters. If SRDI works mainly through resource transfer, its effects may be larger in cities with strong institutions because firms there can absorb resources more efficiently. If SRDI works mainly through information revelation, its marginal value may be larger in cities with weaker institutions because alternative quality-assessment channels are scarce. These two mechanisms imply different patterns. China's broader patent environment includes policy incentives that have raised patent filing quantities while generating debate about patent quality \citep{hu2017,lin2021}, making it important to distinguish between instruments that reward output volume and those, like SRDI certification, that screen for underlying technological capability.
 
 \subsection{Institutional voids and competing expectations}
 
@@ -151,9 +151,9 @@ The identifying assumption is that, conditional on fixed effects and controls, c
 
 \subsection{Baseline estimates}
 
-Table 2 presents the baseline interaction estimates. The certification dummy itself is close to zero once the interaction is included, suggesting that average effects differ across environments or are absorbed by firm fixed effects. The interaction between certification and institutional quality is consistently positive, with point estimates around 0.046--0.052. Under industry-level clustering, the estimate is statistically significant at the five percent level. Under the preferred province-level clustering, the point estimate remains 0.046 but is statistically imprecise. Because the number of province-level clusters is small and wild-cluster bootstrap \(p\)-values are not reported here, I do not make a strong significance claim from this coefficient.
+Table 2 presents the baseline interaction estimates. The certification dummy itself is close to zero once the interaction is included, suggesting that average effects differ across environments or are absorbed by firm fixed effects. The interaction between certification and institutional quality is consistently positive, with point estimates around 0.046--0.052. Under industry-level clustering, the estimate is statistically significant at the five percent level. Under the preferred province-level clustering, the point estimate remains positive but statistically imprecise. A wild-cluster bootstrap test with province-level clusters, Webb weights, and 9,999 replications gives \(p=0.280\) for the interaction in an equivalent firm- and year-fixed-effects specification. I therefore do not make a strong significance claim from this coefficient.
 
-The magnitude is economically meaningful if taken at face value. A one-standard-deviation increase in institutional quality is associated with an additional 0.046 point increase in innovation quality for certified firms, about 9 percent of the mean outcome. The confidence intervals, however, are wide enough that the baseline model cannot establish a strong complementarity effect. Columns 5 and 6 are descriptive subgroup checks rather than formal moderation tests. They estimate conditional certification effects separately and do not contain the interaction structure used in columns 1--4.
+The magnitude is economically meaningful if taken at face value. A one-standard-deviation increase in institutional quality is associated with an additional 0.046 point increase in innovation quality for certified firms, about 9 percent of the mean outcome. The confidence intervals and bootstrap result, however, are wide enough that the baseline model cannot establish a strong complementarity effect. Columns 5 and 6 are descriptive subgroup checks rather than formal moderation tests. They estimate conditional certification effects separately and do not contain the interaction structure used in columns 1--4.
 
 \begin{table}[htbp]
 \centering
@@ -178,28 +178,28 @@ Observations & 27,998 & 27,998 & 27,998 & 27,998 & 14,309 & 13,689 \\
 \bottomrule
 \end{tabular}}
 \begin{minipage}{0.96\textwidth}
-\footnotesize Notes: The dependent variable is the 20 percent patent-quality index. Columns 1--4 use the full sample with the institutional index. Columns 5 and 6 split the sample by above- and below-median institutional quality and report conditional certification effects; these split-sample coefficients are descriptive complements and should not be read as formal tests of the interaction hypothesis. Firm controls include log employment, tangibility, ROA, ROE, cash holdings, leverage, sales growth, and earnings-to-assets. Standard errors are in parentheses and clustered as indicated. * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
+\footnotesize Notes: The dependent variable is the 20 percent patent-quality index. Columns 1--4 use the full sample with the institutional index. Columns 5 and 6 split the sample by above- and below-median institutional quality and report conditional certification effects; these split-sample coefficients are descriptive complements and should not be read as formal tests of the interaction hypothesis. Firm controls include log employment, tangibility, ROA, ROE, cash holdings, leverage, sales growth, and earnings-to-assets. Standard errors are in parentheses and clustered as indicated. A supplementary wild-cluster bootstrap test for the preferred interaction specification, using province clusters, Webb weights, and 9,999 replications, gives \(p=0.280\); the corresponding Rademacher-weight result is similar at \(p=0.274\). * \(p<0.10\), ** \(p<0.05\), *** \(p<0.01\).
 \end{minipage}
 \end{table}
 
-\subsection{Event-study evidence and selection concerns}
+\subsection{Event-study evidence and identification}
 
-The event study shows positive post-certification coefficients in five of seven post-treatment periods, ranging from about 0.016 to 0.043. The pre-treatment period is more important for interpretation. Several pre-certification coefficients are negative and statistically significant, especially in the second year before certification and in the long-run binned pre-period.
+Figure 1 reports the event-study estimates from the replication specification, normalized to the year before certification. The post-certification coefficients are positive in all seven post-treatment periods, ranging from about 0.045 to 0.104. The displayed pre-treatment coefficients are also positive but imprecisely estimated, and their confidence intervals include zero. This pattern is more consistent with parallel pre-treatment dynamics than with a clear anticipatory response.
 
-These negative pre-trends are not a small technical detail. A conventional DID interpretation would treat them as evidence against strict parallel trends, and strict parallel trends are not satisfied. The SRDI program's design offers a substantive explanation: official criteria emphasize accumulated technological capability, specialization, R\&D intensity, and intellectual property ownership, but they do not require recent citation-weighted patent quality. Certification may therefore select firms with latent capability whose recent output is temporarily weak, a pattern close to the pre-programme dip discussed by \citet{heckman1999}. This ``selection on distressed quality'' interpretation is plausible, but it does not remove the identification concern. The paper therefore treats the estimates as quasi-experimental evidence under imperfect pre-trends. A direct test of this mechanism would split firms by pre-certification quality declines and test whether larger declines predict certification; that test requires application or pre-treatment selection data that are not available in the current submission.
+The event-study evidence is reassuring, but it does not by itself make certification random. A conventional DID interpretation still requires treated and comparison firms to follow parallel counterfactual trends after conditioning on firm and year fixed effects and controls. The SRDI program's design makes that assumption demanding because official criteria emphasize accumulated technological capability, specialization, R\&D intensity, and intellectual property ownership. The paper therefore treats the estimates as quasi-experimental evidence rather than as a clean experimental contrast. A direct test of remaining selection would compare certified firms with rejected applicants or eligible nonrecipients using application records that are not available in the current submission.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\textwidth]{fig_event_study.png}
 \caption{Dynamic effects of SRDI certification on innovation quality}
 \begin{minipage}{0.96\textwidth}
-\footnotesize Notes: Relative year -1 is the omitted period. Pre-period indicators cover years -6 through -2, with years \(\leq -6\) binned. Post-period indicators cover years 0 through +6, with years \(\geq +6\) binned. The specification includes firm controls, firm fixed effects, and year fixed effects. Standard errors are clustered at the province level. The horizontal axis shows years relative to SRDI certification; t\,=\,0 is the first year of certification.
+\footnotesize Notes: Relative year -1 is normalized to zero. Displayed pre-period indicators cover years -5 through -2; earlier years are excluded because fewer than 10 percent of treated firms have observations before year -5, making those estimates unreliable. Displayed post-period indicators cover years 0 through +6, with years \(\geq +6\) binned. The specification includes firm controls, firm fixed effects, and year fixed effects. Standard errors are clustered at the province level. The horizontal axis shows years relative to SRDI certification; t\,=\,0 is the first year of certification.
 \end{minipage}
 \end{figure}
 
 \subsection{Endogeneity and robustness checks}
 
-Table 3 reports matching and selection checks addressing nonrandom certification timing. The interaction coefficient remains positive in the PSM-RD, PSM-size, and Heckman specifications. These estimates do not solve the pre-trend problem, but they show that the positive interaction pattern is not limited to the baseline regression.
+Table 3 reports matching and selection checks addressing nonrandom certification timing. The interaction coefficient remains positive in the PSM-RD, PSM-size, and Heckman specifications. These estimates do not solve the selection problem, but they show that the positive interaction pattern is not limited to the baseline regression.
 
 \begin{table}[htbp]
 \centering
@@ -379,7 +379,7 @@ The evidence also shows why certification programs may matter most outside leadi
 
 The mechanism evidence suggests that technology governance does not produce a single upgrading path. In high-institution cities, certification is linked to exploration into new technology domains. In low-institution cities, certification is linked to refinement through labor specialization. This distinction matters for policy. If governments evaluate certification only by frontier exploration, they may overlook refinement-oriented upgrading that is more feasible and socially valuable in institutionally thinner regions.
 
-The study has five important limitations. First, SRDI certification is not randomly assigned. Negative pre-certification dynamics show that treated firms differ from controls before certification, likely because the program screens for latent capability, and strict parallel trends are not satisfied. This selection pattern is theoretically meaningful but empirically challenging. Second, the province-level number of clusters limits statistical power. Several estimates are directionally stable but imprecise, and the absence of wild-cluster bootstrap \(p\)-values makes the inference incomplete. Third, the IV specification has weak-instrument concerns, so it cannot solve endogeneity on its own (see Appendix Table A1). Fourth, the sample covers listed firms, which are more visible and better resourced than the broader population of SMEs. Fifth, the paper tests several mechanism outcomes and subgroups; the mechanism evidence should therefore be interpreted with multiple-testing caution.
+The study has five important limitations. First, SRDI certification is not randomly assigned. While event-study pre-trends are imprecise and statistically indistinguishable from zero---a pattern consistent with parallel pre-treatment dynamics---the SRDI program's selection criteria mean that treated firms may differ from controls in unobserved capability trajectories that the event-study window cannot fully rule out. Second, the province-level number of clusters limits statistical power. Several estimates are directionally stable but imprecise, and wild-cluster bootstrap inference confirms that the baseline interaction is not statistically strong. Third, the IV specification has weak-instrument concerns, so it cannot solve endogeneity on its own (see Appendix Table A1). Fourth, the sample covers listed firms, which are more visible and better resourced than the broader population of SMEs. Fifth, the paper tests several mechanism outcomes and subgroups; the mechanism evidence should therefore be interpreted with multiple-testing caution.
 
 These limitations point to the next empirical step. Firm-level application records would allow researchers to compare certified firms with rejected applicants or eligible nonrecipients, improving counterfactual construction. Richer credit-contract data would show whether certification changes loan terms, collateral requirements, or lender screening. Broader SME data would test whether the signal matters more for firms outside the listed-company population.
 
@@ -468,10 +468,10 @@ The financing of R\&D and innovation.
 In Hall, B. H., and Rosenberg, N. (Eds.), \textit{Handbook of the Economics of Innovation}, Vol. 1.
 Elsevier.
 
-\bibitem[Heckman and Smith(1999)]{heckman1999}
-Heckman, J. J., and Smith, J. A. (1999).
-The pre-programme earnings dip and the determinants of participation in a social programme: Implications for simple programme evaluation strategies.
-\textit{Economic Journal}, 109(457), 313--348.
+\bibitem[Hu et al.(2017)]{hu2017}
+Hu, A. G. Z., Zhang, P., and Zhao, L. (2017).
+China as number one? Evidence from China's most recent patenting surge.
+\textit{Journal of Development Economics}, 124, 107--119.
 
 \bibitem[Khanna and Palepu(1997)]{khanna1997}
 Khanna, T., and Palepu, K. (1997).
@@ -495,13 +495,13 @@ Financial development and innovation: Cross-country evidence.
 
 \bibitem[Li et al.(2026)]{li2026}
 Li, T., Song, G., Jin, X., and Wang, H. (2026).
-Specialized innovation policy and innovation quality: Evidence from invention patent text.
-\textit{The World Economy}, forthcoming.
+The fostering policy for ``Little Giants'' and innovation quality: Empirical evidence from invention patents of listed enterprises.
+\textit{The Journal of World Economy}, 49(4), 36--67. [In Chinese].
 
-\bibitem[Liu et al.(2017)]{liu2017}
-Liu, Q., Lu, R., Zhang, Y., and Zheng, H. (2017).
-The patent subsidy trap: Evidence from China.
-Working paper.
+\bibitem[Lin et al.(2021)]{lin2021}
+Lin, J., Wu, H.-M., and Wu, H. (2021).
+Could government lead the way? Evaluation of China's patent subsidy policy on patent quality.
+\textit{China Economic Review}, 69, Article 101663.
 
 \bibitem[Lucas(1990)]{lucas1990}
 Lucas, R. E., Jr. (1990).
